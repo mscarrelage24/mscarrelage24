@@ -1,0 +1,51 @@
+'use client';
+
+import { House, Sun, Waves, Hammer } from 'lucide-react';
+import ServiceCard from '@/components/ui/ServiceCard';
+
+export function Services() {
+  const services = [
+    {
+      title: 'Carrelage Intérieur',
+      text: `De la cuisine au salon, nous créons des espaces élégants et
+              durables. Expertise en pose de carrelage grand format.`,
+      imgSrc: '/s1.jpg',
+      icon: <House className="text-amber-4" />,
+    },
+    {
+      title: 'Carrelage Extérieur',
+      text: `Sublimez vos extérieurs avec des carrelages résistants aux intempéries. Terrasses, allées et plages de piscine.`,
+      imgSrc: '/s3.jpg',
+      icon: <Sun className="text-amber-4" />,
+    },
+    {
+      title: 'Piscines',
+      text: `Spécialiste des revêtements de piscine. Mosaïque, carrelage antidérapant et margelles sur mesure.`,
+      imgSrc: '/s4.jpg',
+      icon: <Waves className="text-amber-4" />,
+    },
+    {
+      title: 'Rénovation',
+      text: `Transformez vos espaces existants. Dépose, préparation des supports et pose dans les règles de l'art.`,
+      imgSrc: '/s2.jpg',
+      icon: <Hammer className="text-amber-4" />,
+    },
+  ];
+
+  return (
+    <section className="container section flex-col-center gap-8 md:gap-12">
+      <div className="flex-col-center max-w-xl gap-6">
+        <h2 className="sub-title">Nos Domaines d'Excellence</h2>
+        <p className="description">
+          Notre expertise au service de vos espaces. Découvrez nos solutions de
+          carrelage personnalisées pour tous vos projets d'aménagement.
+        </p>
+      </div>
+      <div className="flex flex-col items-center justify-center lg:flex-row lg:flex-wrap gap-6">
+        {services.map((service) => (
+          <ServiceCard key={service.title} {...service} />
+        ))}
+      </div>
+    </section>
+  );
+}
