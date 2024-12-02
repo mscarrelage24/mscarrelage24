@@ -7,12 +7,14 @@ import Navbar from '@/components/Navbar';
 const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
+  display: 'swap', // Ajoutez cette ligne
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 
 const openSans = Open_Sans({
   subsets: ['latin'],
   variable: '--font-open-sans',
+  display: 'swap', // Ajoutez cette ligne
   weight: ['300', '400', '500', '600', '700', '800'],
 });
 
@@ -30,7 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         suppressHydrationWarning={true}
-        className={`${montserrat.variable} ${openSans.variable} antialiased bg-slate-100`}
+        className={`${montserrat.variable} ${openSans.variable} font-montserrat antialiased bg-slate-100`}
       >
         <Navbar />
         {children}

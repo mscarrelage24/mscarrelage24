@@ -36,11 +36,13 @@
   h1,
   h2,
   h3 {
-    @apply font-['Montserrat'] font-bold;
+    @apply font-montserrat font-bold;
   }
+
   body {
-    @apply font-['Open_Sans'];
+    @apply font-open-sans;
   }
+
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;

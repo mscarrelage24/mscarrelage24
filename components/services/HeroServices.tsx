@@ -6,7 +6,7 @@ const HeroServices = () => {
   return (
     <div className="min-h-[70dvh] md:min-h-[65dvh] lg:min-h-[75dvh] relative flex size-full items-center justify-center overflow-hidden rounded-lg p-8 md:p-20">
       <div className="flex flex-col items-center justify-center gap-6">
-        <h1 className="font-serif text-2xl md:text-4xl text-center mt-8 tracking-wide bg-clip-text text-transparent bg-gradient-to-b from-neutral-700 to-neutral-900 md:mt-12">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-700 to-neutral-900 md:mt-12">
           Nos Solutions Carrelage
         </h1>
         <p className="tag">De la conception à la réalisation</p>
