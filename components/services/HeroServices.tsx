@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 
 const HeroServices = () => {
   return (
-    <div className="min-h-[70dvh] md:min-h-[65dvh] lg:min-h-[75dvh] relative flex size-full items-center justify-center overflow-hidden rounded-lg p-8 md:p-20">
+    <div className="min-h-[70dvh] md:min-h-[65dvh] lg:min-h-[75dvh] relative flex size-full items-center justify-center overflow-hidden rounded-lg p-8 md:p-20 mt-16 md:mt-0">
       <div className="flex flex-col items-center justify-center gap-6">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-700 to-neutral-900 md:mt-12">
           Nos Solutions Carrelage

@@ -122,12 +122,9 @@ export function Form() {
     >
       <motion.div
         {...animationProps}
-        className="max-w-md w-full mx-auto rounded-xl md:rounded-2xl p-4 md:p-8 shadow-input bg-slate-100 border border-zinc-300"
+        className="max-w-md w-full mx-auto rounded-lg p-4 md:p-8 shadow-input bg-slate-100 border border-zinc-300"
       >
         <h2 className="font-bold text-xl text-neutral-800">Contactez-nous</h2>
-        <p className="text-neutral-600 text-sm max-w-sm mt-2">
-          Vous souhaitez lancer votre projet ?
-        </p>
 
         {isSubmitted ? (
           <div className="flex flex-col gap-4">
@@ -144,7 +141,7 @@ export function Form() {
             </button>
           </div>
         ) : (
-          <form ref={formRef} className="my-8" onSubmit={handleSubmit}>
+          <form ref={formRef} className="mt-8" onSubmit={handleSubmit}>
             <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
               <LabelInputContainer>
                 <Label htmlFor="firstname">Nom</Label>

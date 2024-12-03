@@ -20,7 +20,7 @@ const Portfolio = () => {
           secondImage="/portfolio/pa-1.jpg"
           firstImageClassName="object-cover object-left-top"
           secondImageClassname="object-cover object-left-top"
-          className="h-[250px] w-[200px] md:h-[400px] md:w-[400px]"
+          className="h-[300px] w-[300px] md:h-[400px] md:w-[400px]"
           slideMode="hover"
         />
         <Compare
@@ -28,7 +28,7 @@ const Portfolio = () => {
           secondImage="/portfolio/pa-2.jpg"
           firstImageClassName="object-cover object-left-top"
           secondImageClassname="object-cover object-left-top"
-          className="h-[250px] w-[200px] md:h-[400px] md:w-[400px]"
+          className="h-[300px] w-[300px] md:h-[400px] md:w-[400px]"
           slideMode="hover"
         />
       </div>
