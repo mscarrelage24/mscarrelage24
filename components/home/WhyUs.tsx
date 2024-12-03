@@ -36,7 +36,13 @@ const WhyUs = () => {
           vous des aménagements durables et élégants. Un savoir-faire reconnu
           pour des réalisations qui traversent le temps.
         </p>
-        <video src={videoSrc} loop autoPlay className="rounded-lg" />
+        <video
+          src={videoSrc}
+          loop
+          autoPlay
+          playsInline
+          className="rounded-lg"
+        />
       </div>
     </section>
   );

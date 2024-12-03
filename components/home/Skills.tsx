@@ -18,7 +18,7 @@ const Skills = () => {
         <div className="flex justify-center items-center ">
           <Image
             src="/ms.jpg"
-            alt="marie avocate"
+            alt="carreleur bergerac"
             width={500}
             height={500}
             className="rounded-lg"
@@ -37,7 +37,7 @@ const Skills = () => {
             conseil à la réalisation, nous vous accompagnons dans chaque étape
             pour garantir un résultat à la hauteur de vos attentes.
           </p>
-          <Link href="/">
+          <Link href="/services">
             <button className="inline-flex items-center gap-2 border border-black/15 px-6 h-12 rounded-xl cursor-pointer">
               <span className="font-semibold">Mes services</span>
               <FaArrowRight className="size-4" />
@@ -53,7 +53,7 @@ const Skills = () => {
         <div className="flex justify-center items-center relative order-1 lg:order-2">
           <Image
             src="/ms-2.jpg"
-            alt="marie avocate"
+            alt="carrelage bergerac"
             width={500}
             height={500}
             className="rounded-lg"
@@ -73,7 +73,7 @@ const Skills = () => {
             expertise reconnue en Dordogne, avec une garantie décennale pour
             votre tranquillité.
           </p>
-          <Link href="/" className="">
+          <Link href="/contact" className="">
             <button className="inline-flex items-center gap-2 border border-black/15 bg-neutral-900/95 text-neutral-50 px-6 h-12 rounded-xl cursor-pointer">
               <span>👋</span>
               <span className="font-semibold">Prenez Contact</span>

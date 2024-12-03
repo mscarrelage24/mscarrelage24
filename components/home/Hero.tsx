@@ -19,14 +19,19 @@ const Hero = () => {
           nous créons des surfaces d'exception qui traversent le temps.
         </p>
         <div className=" flex-col-center md:flex-center space-y-4">
-          <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl cursor-pointer text-white">
-            <span className="font-semibold">Mes services</span>
-            <FaArrowDown className="size-4" />
-          </button>
-          <button className="inline-flex items-center gap-2 border border-white/15 bg-zinc-800/95 text-neutral-50 px-6 h-12 rounded-xl cursor-pointer">
-            <span>👋</span>
-            <span className="font-semibold">Prenez Contact</span>
-          </button>
+          <Link href="/services">
+            <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl cursor-pointer text-white">
+              <span className="font-semibold">Mes services</span>
+              <FaArrowDown className="size-4" />
+            </button>
+          </Link>
+
+          <Link href="/contact">
+            <button className="inline-flex items-center gap-2 border border-white/15 bg-zinc-800/95 text-neutral-50 px-6 h-12 rounded-xl cursor-pointer">
+              <span>👋</span>
+              <span className="font-semibold">Prenez Contact</span>
+            </button>{' '}
+          </Link>
         </div>
       </div>
     </div>
