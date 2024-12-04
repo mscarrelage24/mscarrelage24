@@ -3,6 +3,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Montserrat, Open_Sans } from 'next/font/google';
 import Navbar from '@/components/Navbar';
+import FloatingPhoneButton from '@/components/FloatingPhoneButton';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -21,6 +22,9 @@ const openSans = Open_Sans({
 export const metadata: Metadata = {
   title: 'MS Carrelage 24',
   description: 'MS Carrelage 24',
+  icons: {
+    icon: '/logo.png',
+  },
 };
 
 export default function RootLayout({
@@ -36,6 +40,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <FloatingPhoneButton />
         <Footer />
       </body>
     </html>

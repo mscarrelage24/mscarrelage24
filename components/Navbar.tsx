@@ -72,7 +72,7 @@ const Navbar = () => {
             <AnimatedGradientText>
               <p
                 className={cn(
-                  `lg:text-lg text-center tracking-wide inline animate-gradient bg-gradient-to-r from-[#E4A853] via-[#336AAB] to-[#E4A853] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+                  `font-bold md:text-lg text-center tracking-wide inline animate-gradient bg-gradient-to-r from-[#E4A853] via-[#336AAB] to-[#E4A853] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
                 )}
               >
                 MS Carrelage 24

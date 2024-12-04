@@ -14,7 +14,7 @@ import { cn } from '@/lib/utils';
 const proof = [
   {
     title: '25 ans +',
-    text: `d'expérience`,
+    text: `d'expériences`,
     icon: <CalendarCheck className="text-2xl" color="url(#blue-gradient)" />,
   },
   {
@@ -39,8 +39,8 @@ const proof = [
     icon: <MessageCircle className="text-2xl" color="url(#blue-gradient)" />,
   },
   {
-    title: 'Conseil',
-    text: 'personnalisé',
+    title: 'Conseils',
+    text: 'personnalisés',
     icon: <Users className="text-2xl" color="url(#blue-gradient)" />,
   },
   {
@@ -62,11 +62,9 @@ const ProofBarCard = ({
   return (
     <div
       className={cn(
-        'relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4',
+        'relative w-fit cursor-pointer overflow-hidden rounded-xl border p-4 flex items-center justify-center',
         // light styles
-        'border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]',
-        // dark styles
-        'dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]'
+        'border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]'
       )}
     >
       <svg className="w-0 h-0">
