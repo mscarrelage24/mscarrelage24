@@ -1,11 +1,85 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { FaArrowRight } from 'react-icons/fa6';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 const Skills = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const gridOneRef = useRef<HTMLDivElement>(null);
+  const gridSecondRef = useRef<HTMLDivElement>(null);
+  const textRefOne = useRef<HTMLDivElement>(null);
+  const textRefTwo = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Configuration de base pour les animations
+    const baseConfig = {
+      duration: 1,
+      scrollTrigger: {
+        start: 'top 90%',
+        end: 'bottom 10%',
+      },
+    };
+
+    // Configuration des animations par type
+    const animations = [
+      {
+        ref: sectionRef,
+        from: { opacity: 0 },
+        to: { opacity: 1 },
+      },
+      {
+        ref: titleRef,
+        from: { opacity: 0, y: 50 },
+        to: { opacity: 1, y: 0 },
+      },
+      {
+        ref: gridOneRef,
+        from: { opacity: 0 },
+        to: { opacity: 1 },
+      },
+      {
+        ref: gridSecondRef,
+        from: { opacity: 0 },
+        to: { opacity: 1 },
+      },
+      {
+        ref: textRefOne,
+        from: { opacity: 0, y: 50 },
+        to: { opacity: 1, y: 0, stagger: 0.3 },
+        useChildren: true,
+      },
+      {
+        ref: textRefTwo,
+        from: { opacity: 0, y: 50 },
+        to: { opacity: 1, y: 0, stagger: 0.3 },
+        useChildren: true,
+      },
+    ];
+
+    // Fonction pour créer les animations
+    animations.forEach(({ ref, from, to, useChildren }) => {
+      if (ref.current) {
+        gsap.fromTo(useChildren ? ref.current.children : ref.current, from, {
+          ...to,
+          ...baseConfig,
+          scrollTrigger: {
+            ...baseConfig.scrollTrigger,
+            trigger: ref.current,
+          },
+        });
+      }
+    });
+  }, []);
+
   return (
-    <div className="container section">
-      <h2 className="flex-col-center">
+    <section ref={sectionRef} className="container section">
+      <h2 ref={titleRef} className="flex-col-center">
         <span className="sub-title">Artisan carreleur</span>
 
         <span className="sub-title">à Bergerac depuis 2008</span>
@@ -13,7 +87,10 @@ const Skills = () => {
 
       {/* Section 1 */}
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-16">
+      <div
+        ref={gridOneRef}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-16"
+      >
         {/* img */}
         <div className="flex justify-center items-center ">
           <Image
@@ -26,7 +103,7 @@ const Skills = () => {
         </div>
 
         {/* text */}
-        <div className="flex flex-col items-center">
+        <div ref={textRefOne} className="flex flex-col items-center">
           <h3 className="sub-title-section mt-8 md:mt-12">
             Un savoir-faire artisanal
           </h3>
@@ -48,7 +125,10 @@ const Skills = () => {
 
       {/* Section 2 */}
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-16">
+      <div
+        ref={gridSecondRef}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-16"
+      >
         {/* img */}
         <div className="flex justify-center items-center relative order-1 lg:order-2">
           <Image
@@ -62,7 +142,10 @@ const Skills = () => {
 
         {/* text */}
 
-        <div className="flex flex-col items-center order-2 lg:order-1">
+        <div
+          ref={textRefTwo}
+          className="flex flex-col items-center order-2 lg:order-1"
+        >
           <h3 className="sub-title-section mt-8 md:mt-12">
             Notre engagement qualité
           </h3>
@@ -81,7 +164,7 @@ const Skills = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

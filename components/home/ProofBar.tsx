@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useRef } from 'react';
 import {
   CalendarCheck,
   CheckCircle,
@@ -10,6 +11,8 @@ import {
 } from 'lucide-react';
 import Marquee from '@/components/ui/marquee';
 import { cn } from '@/lib/utils';
+import gsap from 'gsap'; // Ajout de gsap
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const proof = [
   {
@@ -86,9 +89,38 @@ const ProofBarCard = ({
   );
 };
 
+gsap.registerPlugin(ScrollTrigger);
+
 export function ProofBar() {
+  const proofRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (proofRef.current) {
+      gsap.fromTo(
+        proofRef.current,
+        {
+          opacity: 0,
+          y: 50,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: 'sine.out',
+          scrollTrigger: {
+            trigger: proofRef.current,
+            start: 'top bottom-=100',
+            toggleActions: 'play none none reverse',
+          },
+        }
+      );
+    }
+  }, []);
   return (
-    <section className="2xl:max-w-7xl flex flex-col justify-center items-center mx-auto">
+    <section
+      ref={proofRef}
+      className="2xl:max-w-7xl flex flex-col justify-center items-center mx-auto"
+    >
       <div className="relative flex py-12 w-full flex-col items-center justify-center overflow-hidden ">
         <Marquee pauseOnHover className="[--duration:40s] ">
           {proof.map((review) => (
