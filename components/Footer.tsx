@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="container h-full section flex flex-col items-center justify-center gap-6">
+    <footer className="container  h-full section flex flex-col items-center justify-center gap-6">
       <Link href="/">
         <AnimatedGradientText>
           <h2
