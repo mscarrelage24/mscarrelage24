@@ -50,7 +50,7 @@ const WhyUs = () => {
           ...(stagger && { stagger }),
           scrollTrigger: {
             trigger: ref.current,
-            start: '-=200 bottom',
+            start: '-=500 bottom',
           },
         });
       }
