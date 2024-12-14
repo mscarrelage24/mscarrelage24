@@ -1,11 +1,55 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Compare } from '@/components/ui/compare';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Portfolio = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const divRefOne = useRef<HTMLDivElement>(null);
+  const divRefTwo = useRef<HTMLDivElement>(null);
+
+  const animations = [
+    {
+      ref: sectionRef,
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+    },
+    {
+      ref: divRefOne,
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+    },
+    {
+      ref: divRefTwo,
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+    },
+  ];
+
+  useEffect(() => {
+    animations.forEach(({ ref, from, to }) => {
+      if (ref.current) {
+        gsap.fromTo(ref.current, from, {
+          ...to,
+          duration: 1,
+          scrollTrigger: {
+            trigger: ref.current,
+            start: 'top bottom',
+          },
+        });
+      }
+    });
+  }, []);
+
   return (
-    <section className="container section flex-col-center gap-16">
-      <div className="flex-col-center max-w-xl gap-6">
+    <section
+      ref={sectionRef}
+      className="container section flex-col-center gap-16"
+    >
+      <div ref={divRefOne} className="flex-col-center max-w-xl gap-6">
         <h2 className="sub-title">Nos Dernières Réalisations</h2>
         <p className="description">
           Admirez nos dernières transformations en carrelage. Des projets tout
@@ -14,7 +58,7 @@ const Portfolio = () => {
           projets.
         </p>
       </div>
-      <div className="flex-col-center gap-6 lg:flex-row">
+      <div ref={divRefTwo} className="flex-col-center gap-6 lg:flex-row">
         <Compare
           firstImage="/portfolio/pb-1.jpg"
           secondImage="/portfolio/pa-1.jpg"

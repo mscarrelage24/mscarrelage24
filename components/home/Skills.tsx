@@ -21,7 +21,7 @@ const Skills = () => {
     const baseConfig = {
       duration: 1,
       scrollTrigger: {
-        start: 'top bottom-=100',
+        start: 'top bottom',
       },
     };
 
@@ -34,8 +34,8 @@ const Skills = () => {
       },
       {
         ref: titleRef,
-        from: { opacity: 0, y: 50 },
-        to: { opacity: 1, y: 0 },
+        from: { opacity: 0 },
+        to: { opacity: 1 },
       },
       {
         ref: gridOneRef,
