@@ -27,7 +27,7 @@ const Spanish = () => {
           ease: 'sine.out',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: isDesktop ? '-=100 bottom' : '-=200 bottom',
+            start: isDesktop ? 'top bottom' : '-=100 bottom',
           },
         }
       );

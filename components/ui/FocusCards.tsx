@@ -77,7 +77,7 @@ export function FocusCards({ cards }: { cards: Card[] }) {
           ease: 'sine.out',
           scrollTrigger: {
             trigger: containerRef.current,
-            start: isDesktop ? 'top bottom' : '-=300 bottom',
+            start: isDesktop ? 'top 90%' : '-=300 bottom',
           },
         }
       );

@@ -54,7 +54,7 @@ export function Gallery() {
           ease: 'sine.out',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: isDesktop ? 'top bottom' : '-=300 bottom',
+            start: isDesktop ? 'top 90%' : '-=200 bottom',
           },
         }
       );
