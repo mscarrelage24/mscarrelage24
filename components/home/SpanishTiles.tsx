@@ -9,57 +9,31 @@ gsap.registerPlugin(ScrollTrigger);
 
 const SpanishTiles = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    if (sectionRef) {
+    if (containerRef.current) {
       gsap.fromTo(
-        sectionRef,
-        { opacity: 0 },
+        containerRef.current.children,
+        {
+          opacity: 0,
+          y: 50,
+        },
         {
           opacity: 1,
-
+          y: 0,
+          stagger: 0.3,
           duration: 1.25,
           scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top bottom',
+            trigger: containerRef.current,
+            start: 'top 95%',
           },
         }
       );
     }
-
-    if (containerRef.current) {
-      // On précise le type d'élément
-      const children = gsap.utils.toArray<HTMLElement>(
-        containerRef.current.children
-      );
-
-      children.forEach((child) => {
-        gsap.fromTo(
-          child,
-          {
-            opacity: 0,
-            y: 50,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            scrollTrigger: {
-              trigger: child,
-              start: 'top 90%',
-            },
-          }
-        );
-      });
-    }
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="container section flex-col-center gap-8 md:gap-12"
-    >
+    <section className="container section flex-col-center gap-8 md:gap-12">
       <div ref={containerRef} className="flex-col-center max-w-xl gap-8">
         <h2 className="flex-col-center">
           <span className="sub-title">Spécialiste</span>
