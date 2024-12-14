@@ -1,7 +1,11 @@
 'use client';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const Card = React.memo(
   ({
@@ -53,8 +57,38 @@ type Card = {
 export function FocusCards({ cards }: { cards: Card[] }) {
   const [hovered, setHovered] = useState<number | null>(null);
 
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+
+      gsap.fromTo(
+        containerRef.current.children,
+        {
+          opacity: 0,
+          y: 50,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          stagger: 0.3,
+          ease: 'sine.out',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: isDesktop ? 'top 90%' : 'top bottom',
+          },
+        }
+      );
+    }
+  }, []);
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto md:px-8 w-full">
+    <div
+      ref={containerRef}
+      className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto md:px-8 w-full"
+    >
       {cards.map((card, index) => (
         <Card
           key={index}

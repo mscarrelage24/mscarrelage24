@@ -1,4 +1,11 @@
+'use client';
+
 import { FocusCards } from '@/components/ui/FocusCards';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useEffect, useRef } from 'react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function Gallery() {
   const cards = [
@@ -28,8 +35,34 @@ export function Gallery() {
     },
   ];
 
+  const sectionRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (sectionRef.current) {
+      gsap.fromTo(
+        sectionRef.current.children,
+        {
+          opacity: 0,
+          y: 50,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          stagger: 0.3,
+          ease: 'sine.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 90%',
+          },
+        }
+      );
+    }
+  }, []);
   return (
-    <div className="container section flex-col-center gap-12">
+    <section
+      ref={sectionRef}
+      className="container section flex-col-center gap-12"
+    >
       <div className="flex-col-center max-w-xl gap-6">
         <h2 className="sub-title">Des Idées pour votre Projet</h2>
         <p className="description">
@@ -39,6 +72,6 @@ export function Gallery() {
         </p>
       </div>
       <FocusCards cards={cards} />
-    </div>
+    </section>
   );
 }
