@@ -11,23 +11,49 @@ const SpanishTiles = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (containerRef.current) {
-      gsap.fromTo(
-        containerRef.current.children,
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          stagger: 0.2,
-          duration: 1,
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: '-=300 bottom',
+    // Configuration mobile
+    gsap.matchMedia().add("(max-width: 767px)", () => {
+      if (containerRef.current) {
+        gsap.fromTo(
+          containerRef.current.children,
+          {
+            opacity: 0,
           },
-        }
-      );
-    }
+          {
+            opacity: 1,
+            stagger: 0.2,
+            duration: 1,
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: '-=250 bottom',
+              // markers: true,
+            },
+          }
+        );
+      }
+    });
+  
+    // Configuration desktop
+    gsap.matchMedia().add("(min-width: 768px)", () => {
+      if (containerRef.current) {
+        gsap.fromTo(
+          containerRef.current.children,
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+            stagger: 0.2,
+            duration: 1,
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top bottom',
+              // markers: true,
+            },
+          }
+        );
+      }
+    });
   }, []);
 
   return (

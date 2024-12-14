@@ -25,35 +25,55 @@ const WhyUs = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  const animations = [
+    {
+      ref: sectionRef,
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+    },
+
+    {
+      ref: containerRef,
+      from: { opacity: 0, y: 25 },
+      to: { opacity: 1, y: 0 },
+      stagger: 0.2,
+      useChildren: true,
+    },
+  ];
+
   useEffect(() => {
-    const animations = [
-      {
-        ref: sectionRef,
-        from: { opacity: 0 },
-        to: { opacity: 1 },
-      },
+    // Configuration mobile
+    gsap.matchMedia().add('(max-width: 767px)', () => {
+      animations.forEach(({ ref, from, to, useChildren, stagger }) => {
+        if (ref.current) {
+          gsap.fromTo(useChildren ? ref.current.children : ref.current, from, {
+            ...to,
+            duration: 1,
+            ...(stagger && { stagger }),
+            scrollTrigger: {
+              trigger: ref.current,
+              start: '-=300 bottom',
+            },
+          });
+        }
+      });
+    });
 
-      {
-        ref: containerRef,
-        from: { opacity: 0, y: 25 },
-        to: { opacity: 1, y: 0 },
-        stagger: 0.2,
-        useChildren: true,
-      },
-    ];
-
-    animations.forEach(({ ref, from, to, useChildren, stagger }) => {
-      if (ref.current) {
-        gsap.fromTo(useChildren ? ref.current.children : ref.current, from, {
-          ...to,
-          duration: 1,
-          ...(stagger && { stagger }),
-          scrollTrigger: {
-            trigger: ref.current,
-            start: '-=500 bottom',
-          },
-        });
-      }
+    // Configuration desktop
+    gsap.matchMedia().add('(min-width: 768px)', () => {
+      animations.forEach(({ ref, from, to, useChildren, stagger }) => {
+        if (ref.current) {
+          gsap.fromTo(useChildren ? ref.current.children : ref.current, from, {
+            ...to,
+            duration: 1,
+            ...(stagger && { stagger }),
+            scrollTrigger: {
+              trigger: ref.current,
+              start: 'top bottom',
+            },
+          });
+        }
+      });
     });
   }, []);
 

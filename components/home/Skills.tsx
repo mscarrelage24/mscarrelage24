@@ -16,63 +16,86 @@ const Skills = () => {
   const textRefOne = useRef<HTMLDivElement>(null);
   const textRefTwo = useRef<HTMLDivElement>(null);
 
+  const animations = [
+    {
+      ref: sectionRef,
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+    },
+    {
+      ref: titleRef,
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+    },
+    {
+      ref: gridOneRef,
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+    },
+    {
+      ref: gridSecondRef,
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+    },
+    {
+      ref: textRefOne,
+      from: { opacity: 0 },
+      to: { opacity: 1, stagger: 0.3 },
+      useChildren: true,
+    },
+    {
+      ref: textRefTwo,
+      from: { opacity: 0 },
+      to: { opacity: 1, stagger: 0.3 },
+      useChildren: true,
+    },
+  ];
+
   useEffect(() => {
-    // Configuration de base pour les animations
-    const baseConfig = {
-      duration: 1,
-      scrollTrigger: {
-        start: '-=500 bottom',
-      },
-    };
+    // Configuration mobile
+    gsap.matchMedia().add('(max-width: 767px)', () => {
+      const baseConfig = {
+        duration: 1,
+        scrollTrigger: {
+          start: '-=300 bottom',
+        },
+      };
 
-    // Configuration des animations par type
-    const animations = [
-      {
-        ref: sectionRef,
-        from: { opacity: 0 },
-        to: { opacity: 1 },
-      },
-      {
-        ref: titleRef,
-        from: { opacity: 0 },
-        to: { opacity: 1 },
-      },
-      {
-        ref: gridOneRef,
-        from: { opacity: 0 },
-        to: { opacity: 1 },
-      },
-      {
-        ref: gridSecondRef,
-        from: { opacity: 0 },
-        to: { opacity: 1 },
-      },
-      {
-        ref: textRefOne,
-        from: { opacity: 0 },
-        to: { opacity: 1, stagger: 0.3 },
-        useChildren: true,
-      },
-      {
-        ref: textRefTwo,
-        from: { opacity: 0 },
-        to: { opacity: 1, stagger: 0.3 },
-        useChildren: true,
-      },
-    ];
+      animations.forEach(({ ref, from, to, useChildren }) => {
+        if (ref.current) {
+          gsap.fromTo(useChildren ? ref.current.children : ref.current, from, {
+            ...to,
+            duration: baseConfig.duration,
+            scrollTrigger: {
+              trigger: ref.current,
+              start: baseConfig.scrollTrigger.start,
+            },
+          });
+        }
+      });
+    });
 
-    // Fonction pour créer les animations
-    animations.forEach(({ ref, from, to, useChildren }) => {
-      if (ref.current) {
-        gsap.fromTo(useChildren ? ref.current.children : ref.current, from, {
-          ...to,
-          ...baseConfig,
-          scrollTrigger: {
-            ...baseConfig.scrollTrigger,
-            trigger: ref.current,
-          },
-        });
-      }
+    // Configuration desktop
+    gsap.matchMedia().add('(min-width: 768px)', () => {
+      const baseConfig = {
+        duration: 1,
+        scrollTrigger: {
+          start: 'top bottom',
+        },
+      };
+
+      animations.forEach(({ ref, from, to, useChildren }) => {
+        if (ref.current) {
+          gsap.fromTo(useChildren ? ref.current.children : ref.current, from, {
+            ...to,
+            duration: baseConfig.duration,
+            scrollTrigger: {
+              trigger: ref.current,
+              start: baseConfig.scrollTrigger.start,
+            },
+          });
+        }
+      });
     });
   }, []);
 

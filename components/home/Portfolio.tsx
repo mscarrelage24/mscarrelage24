@@ -30,20 +30,38 @@ const Portfolio = () => {
   ];
 
   useEffect(() => {
-    animations.forEach(({ ref, from, to }) => {
-      if (ref.current) {
-        gsap.fromTo(ref.current, from, {
-          ...to,
-          duration: 1,
-          scrollTrigger: {
-            trigger: ref.current,
-            start: '-=500 bottom',
-          },
-        });
-      }
+    // Configuration mobile
+    gsap.matchMedia().add('(max-width: 767px)', () => {
+      animations.forEach(({ ref, from, to }) => {
+        if (ref.current) {
+          gsap.fromTo(ref.current, from, {
+            ...to,
+            duration: 1,
+            scrollTrigger: {
+              trigger: ref.current,
+              start: '-=300 bottom',
+            },
+          });
+        }
+      });
+    });
+
+    // Configuration desktop
+    gsap.matchMedia().add('(min-width: 768px)', () => {
+      animations.forEach(({ ref, from, to }) => {
+        if (ref.current) {
+          gsap.fromTo(ref.current, from, {
+            ...to,
+            duration: 1,
+            scrollTrigger: {
+              trigger: ref.current,
+              start: 'top bottom',
+            },
+          });
+        }
+      });
     });
   }, []);
-
   return (
     <section
       ref={sectionRef}
