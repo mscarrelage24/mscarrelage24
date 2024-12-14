@@ -16,16 +16,14 @@ const SpanishTiles = () => {
         containerRef.current.children,
         {
           opacity: 0,
-          y: 50,
         },
         {
           opacity: 1,
-          y: 0,
-          stagger: 0.3,
-          duration: 1.25,
+          stagger: 0.2,
+          duration: 1,
           scrollTrigger: {
             trigger: containerRef.current,
-            start: 'top 95%',
+            start: 'top bottom',
           },
         }
       );
