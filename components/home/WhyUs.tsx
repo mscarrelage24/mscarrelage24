@@ -52,7 +52,7 @@ const WhyUs = () => {
             ...(stagger && { stagger }),
             scrollTrigger: {
               trigger: ref.current,
-              start: '-=300 bottom',
+              start: '-=400 bottom',
             },
           });
         }
@@ -69,7 +69,7 @@ const WhyUs = () => {
             ...(stagger && { stagger }),
             scrollTrigger: {
               trigger: ref.current,
-              start: 'top bottom',
+              start: '-=200 bottom',
             },
           });
         }
