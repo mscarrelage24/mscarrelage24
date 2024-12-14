@@ -15,14 +15,14 @@ const SpanishTiles = () => {
     if (sectionRef) {
       gsap.fromTo(
         sectionRef,
-        { opacity: 0, y: 50 },
+        { opacity: 0 },
         {
           opacity: 1,
-          y: 0,
-          duration: 1.5,
+
+          duration: 1.25,
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top bottom-=100',
+            start: 'top bottom',
           },
         }
       );
@@ -48,7 +48,6 @@ const SpanishTiles = () => {
             scrollTrigger: {
               trigger: child,
               start: 'top 90%',
-              end: 'bottom 10%',
             },
           }
         );
