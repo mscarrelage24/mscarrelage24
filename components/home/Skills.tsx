@@ -21,7 +21,7 @@ const Skills = () => {
     const baseConfig = {
       duration: 1,
       scrollTrigger: {
-        start: 'top bottom',
+        start: '-=200 bottom',
       },
     };
 
@@ -49,14 +49,14 @@ const Skills = () => {
       },
       {
         ref: textRefOne,
-        from: { opacity: 0, y: 50 },
-        to: { opacity: 1, y: 0, stagger: 0.3 },
+        from: { opacity: 0 },
+        to: { opacity: 1, stagger: 0.3 },
         useChildren: true,
       },
       {
         ref: textRefTwo,
-        from: { opacity: 0, y: 50 },
-        to: { opacity: 1, y: 0, stagger: 0.3 },
+        from: { opacity: 0 },
+        to: { opacity: 1, stagger: 0.3 },
         useChildren: true,
       },
     ];

@@ -23,7 +23,7 @@ const SpanishTiles = () => {
           duration: 1,
           scrollTrigger: {
             trigger: containerRef.current,
-            start: 'top bottom',
+            start: '-=200 bottom',
           },
         }
       );

@@ -37,7 +37,7 @@ const Portfolio = () => {
           duration: 1,
           scrollTrigger: {
             trigger: ref.current,
-            start: 'top bottom',
+            start: '-=200 bottom',
           },
         });
       }
