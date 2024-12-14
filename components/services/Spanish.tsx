@@ -12,6 +12,7 @@ const Spanish = () => {
 
   useEffect(() => {
     if (sectionRef.current) {
+      const isDesktop = window.matchMedia('(min-width: 768px)').matches;
       gsap.fromTo(
         sectionRef.current.children,
         {
@@ -26,7 +27,7 @@ const Spanish = () => {
           ease: 'sine.out',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top bottom',
+            start: isDesktop ? '-=100 bottom' : '-=200 bottom',
           },
         }
       );

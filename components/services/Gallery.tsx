@@ -36,7 +36,9 @@ export function Gallery() {
   ];
 
   const sectionRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
+    const isDesktop = window.matchMedia('(min-width: 768px)').matches;
     if (sectionRef.current) {
       gsap.fromTo(
         sectionRef.current.children,
@@ -52,7 +54,7 @@ export function Gallery() {
           ease: 'sine.out',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 90%',
+            start: isDesktop ? 'top bottom' : '-=300 bottom',
           },
         }
       );
