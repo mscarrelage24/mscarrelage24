@@ -21,8 +21,7 @@ const Skills = () => {
     const baseConfig = {
       duration: 1,
       scrollTrigger: {
-        start: 'top 90%',
-        end: 'bottom 10%',
+        start: 'top bottom-=100',
       },
     };
 

@@ -10,35 +10,35 @@ import { Opacity } from '@tsparticles/engine';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function Services() {
-  const services = [
-    {
-      title: 'Carrelage Intérieur',
-      text: `De la cuisine au salon, nous créons des espaces élégants et
-              durables. Expertise en pose de carrelage grand format.`,
-      imgSrc: '/s1.jpg',
-      icon: <House className="text-amber-4" />,
-    },
-    {
-      title: 'Carrelage Extérieur',
-      text: `Sublimez vos extérieurs avec des carrelages résistants aux intempéries. Terrasses, allées et plages de piscine.`,
-      imgSrc: '/s3.jpg',
-      icon: <Sun className="text-amber-4" />,
-    },
-    {
-      title: 'Piscines',
-      text: `Spécialiste des revêtements de piscine. Mosaïque, carrelage antidérapant et margelles sur mesure.`,
-      imgSrc: '/s4.jpg',
-      icon: <Waves className="text-amber-4" />,
-    },
-    {
-      title: 'Rénovation',
-      text: `Transformez vos espaces existants. Dépose, préparation des supports et pose dans les règles de l'art.`,
-      imgSrc: '/s2.jpg',
-      icon: <Hammer className="text-amber-4" />,
-    },
-  ];
+const services = [
+  {
+    title: 'Carrelage Intérieur',
+    text: `De la cuisine au salon, nous créons des espaces élégants et
+            durables. Expertise en pose de carrelage grand format.`,
+    imgSrc: '/s1.jpg',
+    icon: <House className="text-amber-4" />,
+  },
+  {
+    title: 'Carrelage Extérieur',
+    text: `Sublimez vos extérieurs avec des carrelages résistants aux intempéries. Terrasses, allées et plages de piscine.`,
+    imgSrc: '/s3.jpg',
+    icon: <Sun className="text-amber-4" />,
+  },
+  {
+    title: 'Piscines',
+    text: `Spécialiste des revêtements de piscine. Mosaïque, carrelage antidérapant et margelles sur mesure.`,
+    imgSrc: '/s4.jpg',
+    icon: <Waves className="text-amber-4" />,
+  },
+  {
+    title: 'Rénovation',
+    text: `Transformez vos espaces existants. Dépose, préparation des supports et pose dans les règles de l'art.`,
+    imgSrc: '/s2.jpg',
+    icon: <Hammer className="text-amber-4" />,
+  },
+];
 
+export function Services() {
   const sectionRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
@@ -54,8 +54,7 @@ export function Services() {
           duration: 0.6,
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 80%',
-            end: 'bottom 20%',
+            start: 'top bottom-=100',
           },
         }
       );
@@ -74,8 +73,7 @@ export function Services() {
             duration: 0.8,
             scrollTrigger: {
               trigger: child,
-              start: 'top 90%',
-              end: 'bottom 10%',
+              start: 'top bottom-=100',
             },
           }
         );
@@ -93,8 +91,7 @@ export function Services() {
             duration: 0.8,
             scrollTrigger: {
               trigger: card,
-              start: 'top 85%',
-              end: 'bottom 15%',
+              start: 'top bottom-=100',
             },
           }
         );
