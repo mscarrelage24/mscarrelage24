@@ -1,10 +1,52 @@
+'use client';
 import Link from 'next/link';
-import React from 'react';
-
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 const HeroAbout = () => {
+  const mainDivRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (mainDivRef.current) {
+      gsap.fromTo(
+        mainDivRef.current,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 1.5,
+          ease: 'power2.out',
+        }
+      );
+    }
+    if (containerRef.current) {
+      gsap.fromTo(
+        containerRef.current.children,
+        {
+          opacity: 0,
+          y: 50,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          stagger: 0.2,
+          ease: 'sine.out',
+          delay: 0.5, // Ajoute un délai pour que ça commence après l'animation de la div principale
+        }
+      );
+    }
+  }, []);
   return (
-    <div className="min-w-full min-h-dvh h-full flex-col-center lg:flex-row lg:justify-around bg-cover bg-center bg-[url('/hero-a-mob.jpg')] md:bg-[url('/hero-a.jpg')] sm:px-8 lg:px-0">
-      <div className="bg-black/80 md:bg-black/90 p-6 lg:p-8 rounded-lg flex-col-center max-w-3xl space-y-6">
+    <div
+      ref={mainDivRef}
+      className="min-w-full min-h-dvh h-full flex-col-center lg:flex-row lg:justify-around bg-cover bg-center bg-[url('/hero-a-mob.jpg')] md:bg-[url('/hero-a.jpg')] sm:px-8 lg:px-0"
+    >
+      <div
+        ref={containerRef}
+        className="bg-black/80 md:bg-black/90 p-6 lg:p-8 rounded-lg flex-col-center max-w-3xl space-y-6"
+      >
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300 bg-opacity-50 md:h-[52px]">
           Artisan de vos Espaces
         </h1>

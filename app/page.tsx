@@ -10,7 +10,7 @@ import Portfolio from '@/components/home/Portfolio';
 
 export default function Home() {
   return (
-    <>
+    <main>
       <Hero />
       <ProofBar />
       <Services />
@@ -18,6 +18,6 @@ export default function Home() {
       <Skills />
       <Portfolio />
       <WhyUs />
-    </>
+    </main>
   );
 }
