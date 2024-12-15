@@ -41,7 +41,7 @@ const HeroAbout = () => {
   return (
     <div
       ref={mainDivRef}
-      className="min-w-full min-h-dvh h-full flex-col-center lg:flex-row lg:justify-around bg-cover bg-fixed bg-center bg-[url('/hero-a-mob.jpg')] md:bg-[url('/hero-a.jpg')] sm:px-8 lg:px-0"
+      className="min-w-full min-h-screen h-full flex-col-center lg:flex-row lg:justify-around bg-cover bg-center bg-[url('/hero-a-mob.jpg')] md:bg-[url('/hero-a.jpg')] sm:px-8 lg:px-0"
     >
       <div
         ref={containerRef}
