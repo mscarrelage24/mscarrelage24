@@ -25,11 +25,12 @@ const HeroAbout = () => {
         containerRef.current.children,
         {
           opacity: 0,
-          y: 50,
+          transform: 'translateY(50px)',
         },
         {
           opacity: 1,
-          y: 0,
+          transform: 'translateY(0px)',
+
           duration: 1,
           stagger: 0.2,
           ease: 'sine.out',
@@ -38,29 +39,39 @@ const HeroAbout = () => {
       );
     }
   }, []);
+
+  useEffect(() => {
+    const preloadImages = () => {
+      const heroMobile = new Image();
+      const heroDesktop = new Image();
+      heroMobile.src = '/hero-a-mob.jpg';
+      heroDesktop.src = '/hero-a.jpg';
+    };
+    preloadImages();
+  }, []);
   return (
     <div
       ref={mainDivRef}
-      className="min-w-full min-h-screen h-full flex-col-center lg:flex-row lg:justify-around bg-cover bg-center bg-[url('/hero-a-mob.jpg')] md:bg-[url('/hero-a.jpg')] sm:px-8 lg:px-0"
+      className="min-h-screen flex-col-center lg:flex-row lg:justify-around bg-cover bg-center bg-[url('/hero-a-mob.jpg')] md:bg-[url('/hero-a.jpg')] sm:px-8 lg:px-0"
     >
       <div
         ref={containerRef}
-        className="bg-black/80 md:bg-black/90 p-6 lg:p-8 rounded-lg flex-col-center max-w-3xl space-y-6"
+        className="bg-black/80 md:bg-black/90 p-6 lg:p-8 rounded-lg flex-col-center max-w-3xl space-y-6 h-[350px]"
       >
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300 bg-opacity-50 md:h-[52px]">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300 bg-opacity-50 h-[40px] sm:h-[48px] md:h-[60px]">
           Artisan de vos Espaces
         </h1>
         <p className="text-white text-sm inline-flex border border-[#f5f5f5]/20 px-3 py-1 rounded-lg tracking-tight my-6 md:my-8 w-fi">
           L'expertise artisanale au service de vos projets
         </p>
-        <p className="text-center text-sm text-white/90 md:text-md">
+        <p className="text-center text-sm text-white/90 md:text-md h-[92px] md:h-[70px]">
           Artisan carreleur en Dordogne, nous mettons notre expertise au service
           de vos projets. Une équipe passionnée qui apporte solutions et
           conseils personnalisés pour sublimer vos espaces intérieurs et
           extérieurs.
         </p>
         <Link href="/contact">
-          <button className="inline-flex items-center gap-2 border border-white/15 bg-zinc-800/95 text-neutral-50 px-6 h-12 rounded-xl cursor-pointer">
+          <button className="inline-flex items-center gap-2 border border-white/15 bg-zinc-800/95 text-neutral-50 px-6 h-12 rounded-xl cursor-pointer ">
             <span>👋</span>
             <span className="font-semibold">Prenez Contact</span>
           </button>
