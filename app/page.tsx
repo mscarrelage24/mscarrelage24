@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   },
   viewport: 'width=device-width, initial-scale=1',
   verification: {
-    google: 'à-remplir', // Votre code de vérification Google
+    google: 'à-remplir',
   },
   category: 'construction',
   creator: 'MS Carrelage 24',
