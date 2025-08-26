@@ -17,6 +17,10 @@ const links = [
     href: '/services',
   },
   {
+    link: 'Carrelage Bergerac',
+    href: '/carrelage-bergerac',
+  },
+  {
     link: 'À propos',
     href: '/about',
   },
@@ -63,7 +67,7 @@ const Navbar = () => {
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center w-full">
       <nav
         ref={navRef}
-        className="relative flex flex-col md:flex-row justify-between items-center w-full max-w-3xl m-4 py-4 px-6 lg:px-8 rounded-md bg-black/70 backdrop-blur-md"
+        className="relative flex flex-col md:flex-row justify-between items-center w-full max-w-4xl m-4 py-4 px-6 lg:px-8 rounded-md bg-black/70 backdrop-blur-md"
       >
         {/* Logo */}
 

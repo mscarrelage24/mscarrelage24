@@ -8,6 +8,8 @@ import { IconDotsVertical } from '@tabler/icons-react';
 interface CompareProps {
   firstImage?: string;
   secondImage?: string;
+  firstImageAlt?: string;
+  secondImageAlt?: string;
   className?: string;
   firstImageClassName?: string;
   secondImageClassname?: string;
@@ -20,6 +22,8 @@ interface CompareProps {
 export const Compare = ({
   firstImage = '',
   secondImage = '',
+  firstImageAlt = 'First image',
+  secondImageAlt = 'Second image',
   className,
   firstImageClassName,
   secondImageClassname,
@@ -207,7 +211,7 @@ export const Compare = ({
               transition={{ duration: 0 }}
             >
               <img
-                alt="first image"
+                alt={firstImageAlt}
                 src={firstImage}
                 className={cn(
                   'absolute inset-0  z-20 rounded-2xl flex-shrink-0 w-full h-full select-none',
@@ -227,7 +231,7 @@ export const Compare = ({
               'absolute top-0 left-0 z-[19]  rounded-2xl w-full h-full select-none',
               secondImageClassname
             )}
-            alt="second image"
+            alt={secondImageAlt}
             src={secondImage}
             draggable={false}
           />

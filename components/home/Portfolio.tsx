@@ -84,6 +84,8 @@ const Portfolio = () => {
           secondImageClassname="object-cover object-left-top"
           className="h-[300px] w-[300px] md:h-[400px] md:w-[400px]"
           slideMode="hover"
+          firstImageAlt="Piscine à Bergerac avant carrelage"
+          secondImageAlt="Piscine à Bergerac après carrelage"
         />
         <Compare
           firstImage="/portfolio/pb-2.jpg"
@@ -92,6 +94,8 @@ const Portfolio = () => {
           secondImageClassname="object-cover object-left-top"
           className="h-[300px] w-[300px] md:h-[400px] md:w-[400px]"
           slideMode="hover"
+          firstImageAlt="Chantier avant la pose de carrelage à Bergerac"
+          secondImageAlt="Chantier après la pose de carrelage à Bergerac"
         />
       </div>
     </section>

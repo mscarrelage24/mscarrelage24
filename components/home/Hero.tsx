@@ -51,9 +51,9 @@ const Hero = () => {
           MS Carrelage 24
         </h1>
         <p className="text-white text-sm inline-flex border border-[#f5f5f5]/20 px-3 py-1 rounded-lg tracking-tight my-6 md:my-8 w-fi">
-          Artisan carreleur d'exception à Bergerac
+          Artisans carreleurs d'exception à Bergerac
         </p>
-        <p className="text-center text-sm text-white/90 md:text-md h-[92px] md:h-[70px] max-w-2xl lg:max-w-3xl ">
+        <p className="text-center text-sm text-white/90 md:text-md h-[92px] md:h-[70px] max-w-2xl lg:max-w-3xl">
           Sublimez vos espaces intérieurs et extérieurs avec notre expertise
           artisanale. De la salle de bain à la terrasse, de la piscine au salon,
           nous créons des surfaces d'exception qui traversent le temps.

@@ -69,6 +69,7 @@ const Footer = () => {
       </div>
       <Link
         href="/legals"
+        rel="nofollow"
         className="text-neutral-900 hover:text-blue-4 transition-all duration-300 hover:font-bold"
       >
         Mentions légales

@@ -1,12 +1,12 @@
 'use client';
 
-'use client';
 import { House, Sun, Waves, Hammer } from 'lucide-react';
 import ServiceCard from '@/components/ui/ServiceCard';
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Opacity } from '@tsparticles/engine';
+import Link from 'next/link';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -106,8 +106,11 @@ export function Services() {
       <div ref={containerRef} className="flex-col-center max-w-xl gap-6">
         <h2 className="sub-title">Nos Domaines d'Excellence</h2>
         <p className="description">
-          Notre expertise au service de vos espaces. Découvrez nos solutions de
-          carrelage personnalisées pour tous vos projets d'aménagement.
+          Notre expertise au service de vos espaces.{' '}
+          <Link href="/carrelage-bergerac" className="text-amber-5 font-bold">
+            Découvrez nos solutions de carrelage personnalisées
+          </Link>{' '}
+          pour tous vos projets d'aménagement.
         </p>
       </div>
       <div

@@ -1,4 +1,19 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /login/
+Disallow: /private/
+Disallow: /api/
+Crawl-delay: 1
+
+# Fichiers spécifiques à bloquer
+Disallow: /*.pdf$
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Paramètres d'URL à ignorer
+Disallow: /*?*
+Disallow: /*&*
 
 Sitemap: https://www.mscarrelage24.fr/sitemap.xml

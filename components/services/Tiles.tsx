@@ -5,6 +5,7 @@ import { BrickWall, House, Waves, Bath } from 'lucide-react';
 import ServiceCard from '@/components/ui/ServiceCard';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Link from 'next/link';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -84,8 +85,11 @@ const Tiles = () => {
       <div ref={textRef} className="flex-col-center max-w-xl gap-6">
         <h2 className="sub-title">Nos Carrelages</h2>
         <p className="description">
-          Notre expertise au service de vos espaces. Découvrez nos solutions de
-          carrelage personnalisées pour tous vos projets d'aménagement.
+          Notre expertise au service de vos espaces.{' '}
+          <Link href="/carrelage-bergerac" className="text-amber-5 font-bold">
+            Découvrez nos services de carrelage individuels
+          </Link>{' '}
+          pour tous vos projets d'aménagement.
         </p>
       </div>
       <div
