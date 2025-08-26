@@ -62,9 +62,6 @@ export const metadata: Metadata = {
     },
   },
 
-  verification: {
-    google: 'à-remplir',
-  },
   category: 'construction',
   creator: 'MS Carrelage 24',
   publisher: 'MS Carrelage 24',
