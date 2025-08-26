@@ -7,8 +7,8 @@ import Sites from '@/components/carrelage-bergerac/Sites';
 import React from 'react';
 import Head from 'next/head';
 import { faqStructuredData } from '@/components/carrelage-bergerac/Faq';
-import { Metadata } from 'next';
 import StructuredDataScript from '@/components/StructuredDataScript';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'MS Carrelage 24 | Votre Carreleur Expert à Bergerac',
@@ -72,16 +72,11 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
-};
-
 const page = () => {
   return (
     <main>
-      <StructuredDataScript />
-
+      {/* JSON-LD FAQ injecté uniquement sur cette page */}
+      <StructuredDataScript data={faqStructuredData} id="faq-jsonld" />
       {/* Contenu de la page */}
       <Hero />
       <Services />

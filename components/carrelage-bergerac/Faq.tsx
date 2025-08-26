@@ -9,7 +9,7 @@ interface FaqItem {
   title: string;
   answer: string;
 }
-const faq = [
+export const faq = [
   {
     id: '0',
     question: `Quel est le prix moyen de la pose de carrelage à Bergerac ?`,
@@ -58,10 +58,10 @@ const faq = [
 ];
 
 export const faqStructuredData = {
+  '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: faq.map((item) => ({
     '@type': 'Question',
-    '@id': item.id,
     name: item.question,
     acceptedAnswer: {
       '@type': 'Answer',

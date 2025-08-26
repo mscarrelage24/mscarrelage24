@@ -62,10 +62,7 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
-  viewport: 'width=device-width, initial-scale=1',
-  verification: {
-    google: 'à-remplir',
-  },
+
   category: 'construction',
   creator: 'MS Carrelage 24',
   publisher: 'MS Carrelage 24',

@@ -63,6 +63,7 @@ export const metadata: Metadata = {
     'business:contact_data:region': 'Dordogne',
   },
 };
+
 const page = () => {
   return (
     <main>

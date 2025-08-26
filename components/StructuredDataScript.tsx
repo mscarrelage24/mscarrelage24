@@ -1,14 +1,20 @@
 'use client';
 
-import { faqStructuredData } from '@/components/carrelage-bergerac/Faq';
+type StructuredDataScriptProps = {
+  data: Record<string, any>;
+  id?: string;
+};
 
-export default function StructuredDataScript() {
+export default function StructuredDataScript({
+  data,
+  id,
+}: StructuredDataScriptProps) {
   return (
     <script
-      id="faq-structured-data"
+      id={id}
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(faqStructuredData),
+        __html: JSON.stringify(data),
       }}
     />
   );
