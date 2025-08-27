@@ -17,7 +17,7 @@ export const faq = [
   },
   {
     id: '1',
-    question: `Comment choisir son carrelage pour une terrasse à Bergerac ?`,
+    question: `Comment choisir son carrelage pour une terrasse ?`,
     answer: `Privilégiez un carrelage antidérapant (R10 minimum) et résistant au gel, essentiel sous le climat périgourdin. Le grès cérame émaillé ou la pierre reconstituée sont excellents pour les terrasses bergeracoises. Nous vous guidons vers les meilleurs matériaux adaptés à votre usage et à l’esthétique de votre maison.`,
   },
   {
@@ -25,34 +25,30 @@ export const faq = [
     question: `Faut-il prévoir un délai particulier pour la pose de carrelage en Dordogne ?`,
     answer: `Oui, surtout pour les chantiers extérieurs. Évitez les périodes de gel hivernal et privilégiez le printemps ou l’été pour les terrasses. À Bergerac, nous adaptons nos interventions aux conditions météorologiques pour garantir une pose durable.`,
   },
-  {
-    id: '3',
-    question: `Intervenez-vous uniquement à Bergerac centre ?`,
-    answer: `Non, nous couvrons Bergerac et toutes les communes dans un rayon de 30km (Prigonrieux, Creysse, Lamonzie-Montastruc, Monbazillac, Saint-Laurent-des-Vignes…). Les déplacements sont inclus dans nos devis pour toute la zone.`,
-  },
+
   {
     id: '4',
     question: `Proposez-vous la rénovation de carrelage ancien ?`,
-    answer: `Absolument. Nous rénovons et réparons les carrelages abîmés, les joints fissurés, et même les sols en tomettes typiques du Périgord. Nous preservons le charme de l’ancien avec des techniques modernes et durables.`,
+    answer: `Absolument. Nous rénovons et réparons les carrelages abîmés, les joints fissurés, et même les sols en tomettes typiques du Périgord. Nous préservons le charme de l’ancien avec des techniques modernes et durables.`,
   },
   {
     id: '5',
-    question: `Quel carrelage choisir pour une salle de bain à Bergerac ?`,
-    answer: `Optez pour un carrelage antidérapant (R9-R10) et imperméable. Le grès cérame est idéal pour les salles de bain bergeracoises grâce à sa résistance à l'humidité. Nous vous conseillons sur les finitions (mat, brillant, aspect pierre) selon vos goûts.`,
+    question: `Quel carrelage choisir pour une salle de bain ?`,
+    answer: `Optez pour un carrelage antidérapant (R9-R10) et imperméable. Le grès cérame est idéal pour les salles de bain grâce à sa résistance à l'humidité. Nous vous conseillons sur les finitions (mat, brillant, aspect pierre) selon vos goûts.`,
   },
   {
     id: '6',
-    question: `Comment entretenir son carrelage extérieur à Bergerac ?`,
+    question: `Comment entretenir son carrelage extérieur ?`,
     answer: `Un nettoyage régulier à l'eau et au savon neutre suffit. Pour éviter la mousse, traitez annuellement avec un produit anti-mousse. Nous recommandons un jointement au ciment polymère pour une meilleure étanchéité face aux pluies périgourdines.`,
   },
   {
     id: '7',
     question: `Quelle est la différence entre carrelage et faïence ?`,
-    answer: `Le carrelage est plus épais et résistant, idéal pour les sols et les pièces humides. La faïence est plus fragile et réservée aux murs. À Bergerac, nous utilisons majoritairement du carrelage pour sa durabilité face au climat local.`,
+    answer: `Le carrelage est plus épais et résistant, idéal pour les sols et les pièces humides. La faïence est plus fragile et réservée aux murs.`,
   },
   {
     id: '8',
-    question: `Acceptez-vous les petits chantiers de carrelage ?`,
+    question: `Acceptez-vous les petits chantiers ?`,
     answer: `Absolument ! Nous intervenons pour des projets de toutes tailles : réparation d'une douche, remplacement de quelques carreaux, ou création d'une terrasse complète. Chaque projet mérite notre expertise d'artisan carreleur.`,
   },
 ];

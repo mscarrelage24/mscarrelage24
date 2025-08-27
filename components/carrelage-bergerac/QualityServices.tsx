@@ -13,7 +13,7 @@ const QualityServices = () => {
   const servicesTiles = [
     {
       title: 'Pose de carrelage intérieur',
-      text: `Installation professionnelle pour vos salles de bain, cuisines et sols par des carreleurs experts bergeracois.`,
+      text: `Installation professionnelle pour vos salles de bain, cuisines et sols par des carreleurs experts.`,
       imgSrc: '/tiles-page/services/s1.jpg',
       icon: <House className="text-amber-400" />,
     },
@@ -25,25 +25,25 @@ const QualityServices = () => {
     },
     {
       title: 'Rénovation de carrelage',
-      text: `Remplacement de joints et réparation de carreaux cassés par nos artisans carreleurs à Bergerac.`,
+      text: `Remplacement de joints et réparation de carreaux cassés par nos artisans carreleurs.`,
       imgSrc: '/tiles-page/services/s3.jpg',
       icon: <Hammer className="text-amber-400" />,
     },
     {
       title: 'Conseil en choix de carrelage',
-      text: `Guide complet pour sélectionner entre grès cérame, pierre naturelle et autres matériaux adaptés à Bergerac.`,
+      text: `Guide complet pour sélectionner entre grès cérame, pierre naturelle et autres matériaux adaptés.`,
       imgSrc: '/tiles-page/services/s4.jpg',
       icon: <Lightbulb className="text-amber-400" />,
     },
     {
       title: 'Carrelage sur-mesure précis',
-      text: `Découpes expertes pour espaces complexes (escaliers, angles) par nos carreleurs bergeracois`,
+      text: `Découpes expertes pour espaces complexes (escaliers, angles) par nos carreleurs professionnels`,
       imgSrc: '/tiles-page/services/s5.jpg',
       icon: <Square className="text-amber-400" />,
     },
     {
       title: 'Devis de carrelage gratuit',
-      text: `Évaluation transparente de votre projet dans la région de Bergerac sous 48 heures.`,
+      text: `Évaluation transparente de votre projet.`,
       imgSrc: '/tiles-page/services/s6.jpg',
       icon: <FileText className="text-amber-400" />,
     },
