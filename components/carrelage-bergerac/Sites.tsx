@@ -5,7 +5,7 @@ const Sites = () => {
     <section className="container section flex-col-center gap-16">
       <div className="flex-col-center max-w-xl gap-6">
         <h2 className="sub-title">
-          Nos réalisation
+          Nos réalisations
           <br className="hidden md:block" /> à Bergerac
         </h2>
         <p className="description">
