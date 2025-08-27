@@ -4,7 +4,7 @@ const Areas = () => {
   return (
     <section className="container section flex-col-center gap-8 md:gap-12">
       <div className="flex-col-center max-w-xl gap-8">
-        <h2 className="flex-col-center sub-title">Zones desservies </h2>
+        <h2 className="flex-col-center sub-title">Zones d'intervention</h2>
         <div className="flex flex-col space-y-4">
           <p className="description">
             Notre équipe de carreleurs professionnels intervient dans tout

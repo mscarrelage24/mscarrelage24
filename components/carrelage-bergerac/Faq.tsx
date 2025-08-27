@@ -12,43 +12,43 @@ interface FaqItem {
 export const faq = [
   {
     id: '0',
-    question: `Quel est le prix moyen de la pose de carrelage à Bergerac ?`,
+    question: `💰 Quel est le prix moyen d'une pose de carrelage ?`,
     answer: `Le coût dépend du type de pose et des matériaux. Pour une terrasse ou un projet avec des contraintes techniques (découpes complexes, pente, etc.), le tarif peut varier. Nous proposons des devis gratuits et personnalisés pour évaluer précisément votre projet.`,
   },
   {
     id: '1',
-    question: `Comment choisir son carrelage pour une terrasse ?`,
+    question: `🌿 Quel revêtement privilégier pour une terrasse ?`,
     answer: `Privilégiez un carrelage antidérapant (R10 minimum) et résistant au gel, essentiel sous le climat périgourdin. Le grès cérame émaillé ou la pierre reconstituée sont excellents pour les terrasses bergeracoises. Nous vous guidons vers les meilleurs matériaux adaptés à votre usage et à l’esthétique de votre maison.`,
   },
   {
     id: '2',
-    question: `Faut-il prévoir un délai particulier pour la pose de carrelage en Dordogne ?`,
+    question: `⏳ Y a-t-il un délai particulier pour les chantiers extérieurs ?`,
     answer: `Oui, surtout pour les chantiers extérieurs. Évitez les périodes de gel hivernal et privilégiez le printemps ou l’été pour les terrasses. À Bergerac, nous adaptons nos interventions aux conditions météorologiques pour garantir une pose durable.`,
   },
 
   {
-    id: '4',
-    question: `Proposez-vous la rénovation de carrelage ancien ?`,
+    id: '3',
+    question: `🛠️ Proposez-vous la rénovation d’anciens sols ?`,
     answer: `Absolument. Nous rénovons et réparons les carrelages abîmés, les joints fissurés, et même les sols en tomettes typiques du Périgord. Nous préservons le charme de l’ancien avec des techniques modernes et durables.`,
   },
   {
-    id: '5',
-    question: `Quel carrelage choisir pour une salle de bain ?`,
-    answer: `Optez pour un carrelage antidérapant (R9-R10) et imperméable. Le grès cérame est idéal pour les salles de bain grâce à sa résistance à l'humidité. Nous vous conseillons sur les finitions (mat, brillant, aspect pierre) selon vos goûts.`,
+    id: '4',
+    question: `🚿 Quel matériau choisir pour une salle de bain ?`,
+    answer: `Le grès cérame est idéal pour les salles de bain grâce à sa résistance à l'humidité. Nous vous conseillons sur les finitions (mat, brillant, aspect pierre) selon vos goûts.`,
   },
   {
-    id: '6',
-    question: `Comment entretenir son carrelage extérieur ?`,
+    id: '5',
+    question: `🧽 Comment entretenir un revêtement extérieur ?`,
     answer: `Un nettoyage régulier à l'eau et au savon neutre suffit. Pour éviter la mousse, traitez annuellement avec un produit anti-mousse. Nous recommandons un jointement au ciment polymère pour une meilleure étanchéité face aux pluies périgourdines.`,
   },
   {
-    id: '7',
-    question: `Quelle est la différence entre carrelage et faïence ?`,
-    answer: `Le carrelage est plus épais et résistant, idéal pour les sols et les pièces humides. La faïence est plus fragile et réservée aux murs.`,
+    id: '6',
+    question: `🔎 Quelle est la différence entre carrelage et faïence ?`,
+    answer: `Le premier est plus épais et résistant, idéal pour les sols et les pièces humides. La faïence est plus fragile et réservée aux murs.`,
   },
   {
-    id: '8',
-    question: `Acceptez-vous les petits chantiers ?`,
+    id: '7',
+    question: `📐 Acceptez-vous les petits chantiers ?`,
     answer: `Absolument ! Nous intervenons pour des projets de toutes tailles : réparation d'une douche, remplacement de quelques carreaux, ou création d'une terrasse complète. Chaque projet mérite notre expertise d'artisan carreleur.`,
   },
 ];
@@ -111,8 +111,8 @@ const Faq = () => {
       ref={ref}
     >
       <motion.h2 {...getAnimationProps()} className="sub-title mb-12">
-        Vos Questions sur
-        <br className="hidden md:block" /> le Carrelage à Bergerac
+        Questions fréquentes
+        <br className="" /> sur nos prestations
       </motion.h2>
 
       {faq.map(({ id, question, answer }, index) => (

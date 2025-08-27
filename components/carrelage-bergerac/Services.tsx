@@ -11,9 +11,9 @@ const Services = () => {
         <div className="flex flex-col space-y-4">
           <p className="description">
             Grâce à notre savoir-faire artisanal et notre engagement pour un
-            travail bien fait, nous transformons vos projets de carrelage en
-            réalité. Que vous soyez un particulier ou un professionnel à
-            Bergerac, nous vous garantissons 👇
+            travail bien fait, nous donnons vie à vos projets. Que vous soyez un
+            particulier ou un professionnel dans la région bergeracoise, nous
+            vous garantissons 👇
           </p>
           <ul className="text-base md:text-lg text-neutral-700 flex flex-col space-y-2">
             <li className="flex space-x-4">
@@ -26,8 +26,8 @@ const Services = () => {
             <li className="flex space-x-4">
               <span>✅</span>
               <span>
-                Une pose précise et durable, avec 15 ans d&nbsp;expérience sur
-                Bergerac et ses alentours.
+                Une pose précise et durable, forte de 15 ans d’expérience
+                locale.
               </span>
             </li>
             <li className="flex space-x-4">
@@ -38,8 +38,8 @@ const Services = () => {
             </li>
           </ul>
           <p className="description">
-            Cette exigence nous vaut une réputation d&nbsp;excellence auprès de
-            nos clients bergeracois. Vous aussi, profitez de notre expertise !
+            Cette exigence nous vaut une réputation d'excellence auprès de nos
+            clients. Vous aussi, profitez de notre expertise !
           </p>
         </div>
         <Link href="/contact">

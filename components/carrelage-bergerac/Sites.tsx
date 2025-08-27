@@ -5,15 +5,15 @@ const Sites = () => {
     <section className="container section flex-col-center gap-16">
       <div className="flex-col-center max-w-xl gap-6">
         <h2 className="sub-title">
-          Réalisations de Carrelage
+          Nos réalisation
           <br className="hidden md:block" /> à Bergerac
         </h2>
         <p className="description">
-          Vous envisagez un nouveau carrelage ? Inspirez-vous de nos
-          réalisations pour des clients Bergeracois ! Ces photos montrent
-          comment nous avons concrétisé leurs projets avec des solutions
-          sur-mesure et des matériaux choisis pour durer. Votre imagination,
-          notre expertise ✨.
+          Besoin d’inspiration pour vos sols et revêtements muraux ?
+          Inspirez-vous de nos réalisations pour des clients Bergeracois ! Ces
+          photos montrent comment nous avons concrétisé leurs projets avec des
+          solutions sur-mesure et des matériaux choisis pour durer. Votre
+          imagination, notre expertise ✨.
         </p>
         <div className="flex-col-center gap-6 lg:flex-row">
           <Compare

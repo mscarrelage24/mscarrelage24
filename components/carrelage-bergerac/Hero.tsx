@@ -10,15 +10,15 @@ const Hero = () => {
           <br /> Pose & Rénovation de Carrelage
         </h1>
         <p className="text-white text-sm inline-flex border border-[#f5f5f5]/20 px-3 py-1 rounded-lg tracking-tight my-6 md:my-8 w-fi">
-          Pose de carrelage à Bergerac depuis 15 ans.
+          Pose de carrelage depuis 15 ans.
         </p>
         <p className="text-center text-sm text-white/90 md:text-md max-w-2xl lg:max-w-3xl">
-          Artisans carreleurs à Bergerac, nous vous accompagnons pour tous vos
-          projets de pose et rénovation de carrelage (salle de bain, cuisine,
-          terrasse…). Avec 15 ans d&nbsp;expérience en Dordogne, nous vous
-          proposons un service personnalisé, des matériaux de qualité et un
-          devis gratuit. Besoin d&nbsp;un carrelage durable et esthétique ?
-          Contactez-nous dès aujourd&nbsp;hui ! 👇
+          Nos artisans carreleurs accompagnent vos projets de pose et de
+          rénovation, que ce soit dans la salle de bain, la cuisine ou sur la
+          terrasse. Installés à Bergerac, nous privilégions des matériaux
+          durables, un service personnalisé et un devis gratuit. Vous souhaitez
+          un revêtement esthétique et robuste ? Contactez-nous dès aujourd’hui !
+          👇
         </p>
         <Link href="/contact">
           <button className="inline-flex items-center gap-2 border border-white/15 bg-zinc-800/95 text-neutral-50 px-6 h-12 rounded-xl cursor-pointer">
