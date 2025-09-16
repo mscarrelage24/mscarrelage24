@@ -104,7 +104,7 @@ export function Services() {
       className="container section flex-col-center gap-8 md:gap-12"
     >
       <div ref={containerRef} className="flex-col-center max-w-xl gap-6">
-        <h2 className="sub-title">Nos Domaines d'Excellence</h2>
+        <h2 className="sub-title">Notre expertise carrelage</h2>
         <p className="description">
           Notre expertise au service de vos espaces.{' '}
           <Link href="/carrelage-bergerac" className="text-amber-5 font-bold">

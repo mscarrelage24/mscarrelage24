@@ -8,6 +8,7 @@ import WhyUs from '@/components/home/WhyUs';
 import SpanishTiles from '@/components/home/SpanishTiles';
 import Portfolio from '@/components/home/Portfolio';
 import { Metadata } from 'next';
+import Areas from '@/components/home/Areas';
 
 export const metadata: Metadata = {
   title: "MS Carrelage 24 | Artisan Carreleur d'Exception à Bergerac",
@@ -90,6 +91,7 @@ export default function Home() {
       <Hero />
       <ProofBar />
       <Services />
+      <Areas />
       <SpanishTiles />
       <Skills />
       <Portfolio />

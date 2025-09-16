@@ -47,16 +47,18 @@ const Hero = () => {
         ref={containerRef}
         className="bg-black/80 md:bg-black/90 rounded-lg flex flex-col justify-center items-center max-w-3xl space-y-6 min-h-[400px] md:p-0 md:min-h-[500px] px-4 md:px-8 lg:px-12" // Ajoutez min-height
       >
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300 bg-opacity-50 h-[40px] sm:h-[48px] md:h-[60px]">
-          MS Carrelage 24
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300 bg-opacity-50 ">
+          Carreleurs à Bergerac -
+          <br /> Pose & Rénovation de Carrelage
         </h1>
         <p className="text-white text-sm inline-flex border border-[#f5f5f5]/20 px-3 py-1 rounded-lg tracking-tight my-6 md:my-8 w-fi">
-          Artisans carreleurs d'exception à Bergerac
+          MS Carrelage 24
         </p>
         <p className="text-center text-sm text-white/90 md:text-md h-[92px] md:h-[70px] max-w-2xl lg:max-w-3xl">
-          Sublimez vos espaces intérieurs et extérieurs avec notre expertise
-          artisanale. De la salle de bain à la terrasse, de la piscine au salon,
-          nous créons des surfaces d'exception qui traversent le temps.
+          Installés à Bergerac, nous sublimons vos espaces intérieurs et
+          extérieurs avec notre expertise artisanale. De la salle de bain à la
+          terrasse, de la piscine au salon, nous créons des surfaces d'exception
+          qui traversent le temps.
         </p>
         <div
           className="flex-col-center md:flex-center space-y-4 h-[110px] 

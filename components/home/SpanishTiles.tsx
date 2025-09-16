@@ -12,7 +12,7 @@ const SpanishTiles = () => {
 
   useEffect(() => {
     // Configuration mobile
-    gsap.matchMedia().add("(max-width: 767px)", () => {
+    gsap.matchMedia().add('(max-width: 767px)', () => {
       if (containerRef.current) {
         gsap.fromTo(
           containerRef.current.children,
@@ -32,9 +32,9 @@ const SpanishTiles = () => {
         );
       }
     });
-  
+
     // Configuration desktop
-    gsap.matchMedia().add("(min-width: 768px)", () => {
+    gsap.matchMedia().add('(min-width: 768px)', () => {
       if (containerRef.current) {
         gsap.fromTo(
           containerRef.current.children,
@@ -59,9 +59,8 @@ const SpanishTiles = () => {
   return (
     <section className="container section flex-col-center gap-8 md:gap-12">
       <div ref={containerRef} className="flex-col-center max-w-xl gap-8">
-        <h2 className="flex-col-center">
-          <span className="sub-title">Spécialiste</span>
-          <span className="sub-title"> carrelage d'Espagne</span>
+        <h2 className="flex-col-center sub-title">
+          Spécialiste carrelage d'Espagne à Bergerac
         </h2>
         <p className="description">
           Passionnés par le carrelage espagnol, nous vous proposons des

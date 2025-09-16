@@ -47,7 +47,7 @@ const proof = [
     icon: <Users className="text-2xl" color="url(#blue-gradient)" />,
   },
   {
-    title: 'Artisan',
+    title: 'Carreleur',
     text: 'certifié',
     icon: <Medal className="text-2xl" color="url(#blue-gradient)" />,
   },

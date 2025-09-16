@@ -16,10 +16,7 @@ const links = [
     link: 'Services',
     href: '/services',
   },
-  {
-    link: 'Carrelage Bergerac',
-    href: '/carrelage-bergerac',
-  },
+
   {
     link: 'À propos',
     href: '/about',
