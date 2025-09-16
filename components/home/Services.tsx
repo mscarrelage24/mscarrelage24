@@ -107,7 +107,7 @@ export function Services() {
         <h2 className="sub-title">Notre expertise carrelage</h2>
         <p className="description">
           Notre expertise au service de vos espaces.{' '}
-          <Link href="/carrelage-bergerac" className="text-amber-5 font-bold">
+          <Link href="/services" className="text-amber-5 font-bold">
             Découvrez nos solutions de carrelage personnalisées
           </Link>{' '}
           pour tous vos projets d'aménagement.

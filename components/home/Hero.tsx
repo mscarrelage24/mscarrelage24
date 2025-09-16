@@ -45,7 +45,7 @@ const Hero = () => {
     >
       <div
         ref={containerRef}
-        className="bg-black/80 md:bg-black/90 rounded-lg flex flex-col justify-center items-center max-w-3xl space-y-6 min-h-[400px] md:p-0 md:min-h-[500px] px-4 md:px-8 lg:px-12" // Ajoutez min-height
+        className="bg-black/80 md:bg-black/90 rounded-lg flex flex-col justify-center items-center max-w-3xl space-y-6 min-h-[450px] md:p-0 md:min-h-[500px] px-4 md:px-8 lg:px-12" // Ajoutez min-height
       >
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300 bg-opacity-50 ">
           Carreleurs à Bergerac -

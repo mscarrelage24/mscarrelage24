@@ -91,10 +91,10 @@ export default function Home() {
       <Hero />
       <ProofBar />
       <Services />
-      <Areas />
       <SpanishTiles />
       <Skills />
       <Portfolio />
+      <Areas />
       <WhyUs />
     </main>
   );
