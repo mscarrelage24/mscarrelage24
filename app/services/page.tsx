@@ -3,7 +3,6 @@ import HeroServices from '@/components/services/HeroServices';
 import Spanish from '@/components/services/Spanish';
 import Tiles from '@/components/services/Tiles';
 import React from 'react';
-
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -55,7 +54,7 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <>
-      <main className="overflow-x-hidden">
+      <main className="overflow-x-clip">
         <HeroServices />
         <Tiles />
         <Spanish />

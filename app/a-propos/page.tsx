@@ -3,7 +3,6 @@ import HeroAbout from '@/components/a-propos/HeroAbout';
 import Philosophy from '@/components/a-propos/Philosophy';
 import SpanishAbout from '@/components/a-propos/SpanishAbout';
 import React from 'react';
-
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -56,7 +55,7 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <main className="overflow-x-hidden">
+    <main className="overflow-x-clip">
       <HeroAbout />
       <Philosophy />
       <Expertise />

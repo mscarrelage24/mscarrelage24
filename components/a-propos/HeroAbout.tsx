@@ -56,10 +56,10 @@ const HeroAbout = () => {
     >
       <div
         ref={containerRef}
-        className="bg-black/80 md:bg-black/90 p-6 lg:p-8 rounded-lg flex-col-center max-w-3xl space-y-6 h-[350px]"
+        className="bg-black/80 md:bg-black/90 p-6 lg:p-8 rounded-lg flex-col-center w-full max-w-3xl space-y-6"
       >
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300 bg-opacity-50 h-[40px] sm:h-[48px] md:h-[60px]">
-          Artisan de vos Espaces
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300 bg-opacity-50">
+          MS Carrelage 24 - <br /> Artisan de vos Espaces
         </h1>
         <p className="text-white text-sm inline-flex border border-[#f5f5f5]/20 px-3 py-1 rounded-lg tracking-tight my-6 md:my-8 w-fi">
           L'expertise artisanale au service de vos projets
