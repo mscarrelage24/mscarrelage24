@@ -83,6 +83,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
+      <head>
+        <meta name="format-detection" content="telephone=yes, email=yes" />
+      </head>
       <body
         suppressHydrationWarning={true}
         className={`${montserrat.variable} ${openSans.variable} font-montserrat antialiased bg-slate-100`}
