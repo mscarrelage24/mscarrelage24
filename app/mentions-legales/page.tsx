@@ -3,6 +3,10 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Mentions légales',
   description: 'Mentions légales MS Carrelage 24',
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function Page() {
@@ -15,6 +19,9 @@ export default function Page() {
         <h1 className="heading mb-10">Mentions légales</h1>
 
         <ul className="list-disc ml-5">
+          <li>
+            <b>Editeur: </b> Mustapha TOUAY CHAREF
+          </li>
           <li>
             <b>Entreprise: </b>SARL MS CARRELAGE 24
           </li>

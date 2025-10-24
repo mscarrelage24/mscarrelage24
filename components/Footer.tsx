@@ -54,13 +54,22 @@ const Footer = () => {
         </a>
       </div>
       <Link
-        href="/legals"
-        rel="nofollow"
+        href="/mentions-legales"
         className="text-neutral-900 hover:text-blue-4 transition-all duration-300 hover:font-bold"
       >
         Mentions légales
       </Link>
       <p className="">© {currentYear} MS Carrelage 24. Tous droits réservés.</p>
+      <p>
+        Crée par{' '}
+        <a
+          className="text-[#1B4B9B] font-bold"
+          href="https://pulsar-pixel.com/"
+          target="_blank"
+        >
+          Pulsar Pixel
+        </a>
+      </p>
     </footer>
   );
 };

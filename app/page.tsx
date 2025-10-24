@@ -1,8 +1,6 @@
 import Hero from '@/components/home/Hero';
 import { ProofBar } from '@/components/home/ProofBar';
 import { Services } from '@/components/home/Services';
-import { Gallery } from '@/components/services/Gallery';
-import Image from 'next/image';
 import Skills from '@/components/home/Skills';
 import WhyUs from '@/components/home/WhyUs';
 import SpanishTiles from '@/components/home/SpanishTiles';
@@ -10,6 +8,9 @@ import Portfolio from '@/components/home/Portfolio';
 import { Metadata } from 'next';
 import Areas from '@/components/home/Areas';
 import Faq from '@/components/home/Faq';
+import StructuredDataScript from '@/components/StructuredDataScript';
+import { faq } from '@/constants';
+import LocalStructuredData from '@/components/LocalStructuredData';
 
 export const metadata: Metadata = {
   title: "MS Carrelage 24 | Artisan Carreleur d'Exception à Bergerac",
@@ -33,6 +34,7 @@ export const metadata: Metadata = {
     'carrelage salle de bain',
     'carreleur certifié',
   ],
+
   openGraph: {
     title: "MS Carrelage 24 | Artisan Carreleur d'Exception à Bergerac",
     description:
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: 'https://www.mscarrelage24.fr',
+    canonical: '/',
     languages: {
       'fr-FR': 'https://www.mscarrelage24.fr',
     },
@@ -65,10 +67,10 @@ export const metadata: Metadata = {
     },
   },
 
-  category: 'construction',
+  category: 'carreleur',
   creator: 'MS Carrelage 24',
   publisher: 'MS Carrelage 24',
-  authors: [{ name: 'MS Carrelage 24' }],
+  authors: [{ name: 'MS Carrelage 24', url: 'https://www.mscarrelage24.fr' }],
   formatDetection: {
     telephone: true,
     email: true,
@@ -85,10 +87,23 @@ export const metadata: Metadata = {
     'business:contact_data:phone_number': '+33753673439',
   },
 };
-
+const faqStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
 export default function Home() {
   return (
     <main>
+      <LocalStructuredData />
+      <StructuredDataScript data={faqStructuredData} id="faq-jsonld" />
       <Hero />
       <ProofBar />
       <Services />
