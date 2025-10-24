@@ -7,13 +7,15 @@ export const metadata: Metadata = {
   description:
     'Contactez votre artisan carreleur à Bergerac. Devis gratuit pour vos projets de carrelage. Intervention dans un rayon de 30km autour de Bergerac.',
   alternates: {
-    canonical: 'https://www.mscarrelage24.fr/contact',
+    canonical: '/contact',
   },
 };
 const page = () => {
   return (
     <>
-      <Form />
+      <main className="overflow-x-hidden">
+        <Form />
+      </main>
     </>
   );
 };

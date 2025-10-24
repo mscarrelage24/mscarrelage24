@@ -4,7 +4,6 @@ import Spanish from '@/components/services/Spanish';
 import Tiles from '@/components/services/Tiles';
 import React from 'react';
 
-// app/services/page.tsx
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -44,30 +43,24 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: 'https://www.mscarrelage24.fr/services',
-    languages: {
-      'fr-FR': 'https://www.mscarrelage24.fr/services',
-    },
+    canonical: '/services',
   },
   robots: {
     index: true,
     follow: true,
   },
-  category: 'services',
-  other: {
-    'product:category': 'Carrelage',
-    'business:contact_data:email': 'mustaphatouay@hotmail.com',
-    'business:contact_data:phone_number': '+33753673439',
-  },
+  category: 'Carreleur',
 };
 
 const page = () => {
   return (
     <>
-      <HeroServices />
-      <Tiles />
-      <Spanish />
-      <Gallery />
+      <main className="overflow-x-hidden">
+        <HeroServices />
+        <Tiles />
+        <Spanish />
+        <Gallery />{' '}
+      </main>
     </>
   );
 };

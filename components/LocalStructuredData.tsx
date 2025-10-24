@@ -36,6 +36,7 @@ export default function LocalStructuredData() {
         closes: '18:00',
       },
     ],
+
     sameAs: [
       'https://www.google.com/maps/place/MS+Carrelage+24+-+Bergerac/@44.8513257,0.4745286,13.5z/data=!4m10!1m2!2m1!1scarreleur+bergerac!3m6!1s0x2a42c4fe0b1d18ef:0x49a8fa98000a7545!8m2!3d44.856483!4d0.4768091!15sChJjYXJyZWxldXIgYmVyZ2VyYWOSAQ90aWxlX2NvbnRyYWN0b3LgAQA!16s%2Fg%2F11wx053p7f',
     ],

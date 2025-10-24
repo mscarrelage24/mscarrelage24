@@ -66,7 +66,6 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
-
   category: 'carreleur',
   creator: 'MS Carrelage 24',
   publisher: 'MS Carrelage 24',
@@ -83,8 +82,8 @@ export const metadata: Metadata = {
     'business:contact_data:region': 'Dordogne',
     'business:contact_data:postal_code': '24100',
     'business:contact_data:country_name': 'France',
-    'business:contact_data:email': 'mustaphatouay@hotmail.com',
-    'business:contact_data:phone_number': '+33753673439',
+    'business:contact_data:email': 'mailto:mustaphatouay@hotmail.com',
+    'business:contact_data:phone_number': '0753673439',
   },
 };
 const faqStructuredData = {
@@ -101,7 +100,7 @@ const faqStructuredData = {
 };
 export default function Home() {
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <LocalStructuredData />
       <StructuredDataScript data={faqStructuredData} id="faq-jsonld" />
       <Hero />

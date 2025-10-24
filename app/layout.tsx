@@ -3,7 +3,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Montserrat, Open_Sans } from 'next/font/google';
 import Navbar from '@/components/Navbar';
-import FloatingPhoneButton from '@/components/FloatingPhoneButton';
+
 import StructuredDataScript from '@/components/StructuredDataScript';
 
 const montserrat = Montserrat({
@@ -21,54 +21,61 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  icons: {
-    icon: '/favicon.png',
+  metadataBase: new URL('https://www.mscarrelage24.fr'),
+  title: {
+    default: 'MS Carrelage 24 | Carreleur professionnel à Bergerac',
+    template: '%s | MS Carrelage 24',
   },
+  description:
+    'MS Carrelage 24, artisan carreleur à Bergerac. Spécialiste du carrelage intérieur, extérieur, piscine et rénovation en Dordogne depuis 2008.',
+  applicationName: 'MS Carrelage 24',
+  generator: 'Next.js 14',
+  referrer: 'origin-when-cross-origin',
+  keywords: [
+    'carreleur Bergerac',
+    'carrelage Dordogne',
+    'carrelage intérieur',
+    'carrelage extérieur',
+    'carrelage piscine',
+    'rénovation carrelage',
+    'artisan carreleur',
+  ],
+  authors: [
+    { name: 'MS Carrelage 24', url: 'https://www.mscarrelage24.fr' },
+    { name: 'Mustapha Touay Charef' },
+  ],
+  creator: 'MS Carrelage 24',
+  publisher: 'MS Carrelage 24',
   formatDetection: {
     telephone: true,
     email: true,
   },
-};
-
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'MS Carrelage 24',
-  image: 'https://www.mscarrelage24.fr/logo.png',
-  description:
-    'Expert carreleur à Bergerac depuis 2008. Spécialiste en carrelage intérieur, extérieur, piscines et rénovation.',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Bergerac',
-    postalCode: '24100',
-    addressRegion: 'Dordogne',
-    addressCountry: 'FR',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 44.8566198683203,
-    longitude: 0.4767876394707024,
-  },
-  url: 'https://www.mscarrelage24.fr',
-  telephone: '+33753673439',
-  email: 'mustaphatouay@hotmail.com',
-  areaServed: {
-    '@type': 'GeoCircle',
-    geoMidpoint: {
-      '@type': 'GeoCoordinates',
-      latitude: 44.8566198683203,
-      longitude: 0.4767876394707024,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
     },
-    geoRadius: '30000', // 30km
   },
-  openingHours: 'Mo-Fr 09:00-18:00',
+  openGraph: {
+    type: 'website',
+    locale: 'fr_FR',
+    url: 'https://www.mscarrelage24.fr',
+    siteName: 'MS Carrelage 24',
+    title: 'MS Carrelage 24 | Carreleur professionnel à Bergerac',
+    description:
+      "Expert carreleur à Bergerac avec plus de 25 ans d'expérience. Pose et rénovation de carrelage intérieur, extérieur et piscine en Dordogne.",
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'MS Carrelage 24 - Artisan carreleur à Bergerac',
+      },
+    ],
+  },
 };
-
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -76,20 +83,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <head>
-        {/* Script JSON-LD global LocalBusiness */}
-        <StructuredDataScript
-          data={localBusinessSchema}
-          id="localbusiness-jsonld"
-        />
-      </head>
       <body
         suppressHydrationWarning={true}
         className={`${montserrat.variable} ${openSans.variable} font-montserrat antialiased bg-slate-100`}
       >
         <Navbar />
         {children}
-
         <Footer />
       </body>
     </html>

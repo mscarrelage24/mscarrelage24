@@ -30,7 +30,7 @@ export const metadata: Metadata = {
       "À Propos | Artisan Carreleur d'Exception à Bergerac - MS Carrelage 24",
     description:
       "Découvrez notre expertise artisanale en carrelage. Partenaire des meilleurs fabricants espagnols, nous garantissons des réalisations d'exception en Dordogne.",
-    url: 'https://www.mscarrelage24.fr/about',
+    url: 'https://www.mscarrelage24.fr/a-propos',
     siteName: 'MS Carrelage 24',
     locale: 'fr_FR',
     type: 'website',
@@ -44,29 +44,19 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: 'https://www.mscarrelage24.fr/about',
-    languages: {
-      'fr-FR': 'https://www.mscarrelage24.fr/about',
-    },
+    canonical: '/a-propos',
   },
   robots: {
     index: true,
     follow: true,
   },
-  category: 'company',
+  category: 'Carreleur',
   creator: 'MS Carrelage 24',
-  other: {
-    'business:contact_data:email': 'mustaphatouay@hotmail.com',
-    'business:contact_data:phone_number': '+33753673439',
-    'geo.region': 'FR-24',
-    'geo.placename': 'Bergerac',
-    'business:contact_data:region': 'Dordogne',
-  },
 };
 
 const page = () => {
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <HeroAbout />
       <Philosophy />
       <Expertise />
