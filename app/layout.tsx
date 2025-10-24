@@ -89,7 +89,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
-        <FloatingPhoneButton />
+
         <Footer />
       </body>
     </html>

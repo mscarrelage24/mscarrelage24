@@ -9,11 +9,12 @@ import SpanishTiles from '@/components/home/SpanishTiles';
 import Portfolio from '@/components/home/Portfolio';
 import { Metadata } from 'next';
 import Areas from '@/components/home/Areas';
+import Faq from '@/components/home/Faq';
 
 export const metadata: Metadata = {
   title: "MS Carrelage 24 | Artisan Carreleur d'Exception à Bergerac",
   description:
-    "Expert carreleur à Bergerac depuis 2008. Spécialiste en carrelage intérieur, extérieur, piscines et rénovation. Plus de 25 ans d'expérience en Dordogne, rayon de 30km. Spécialiste du carrelage espagnol.",
+    'MS Carrelage 24, expert carreleur à Bergerac depuis 2008. Spécialiste en carrelage intérieur, extérieur, piscine et rénovation en Dordogne',
   keywords: [
     'carreleur Bergerac',
     'carrelage Dordogne',
@@ -96,6 +97,7 @@ export default function Home() {
       <Portfolio />
       <Areas />
       <WhyUs />
+      <Faq />
     </main>
   );
 }

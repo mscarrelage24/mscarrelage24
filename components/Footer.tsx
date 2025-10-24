@@ -1,12 +1,10 @@
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-import { FaLinkedin } from 'react-icons/fa6';
-import { FaSquareInstagram, FaGithub } from 'react-icons/fa6';
 import { CiMail } from 'react-icons/ci';
 import { MdOutlineSmartphone } from 'react-icons/md';
 import AnimatedGradientText from '@/components/ui/animated-gradient-text';
 import { cn } from '@/lib/utils';
+import { links } from '@/constants';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -26,46 +24,34 @@ const Footer = () => {
 
       {/* links */}
       <div className="flex flex-col items-center md:flex-row gap-6">
-        <Link
-          href="/"
-          className="mb-2 md:mb-0 hover:text-blue-4 transition-all duration-300 hover:font-bold"
-        >
-          Accueil
-        </Link>
-        <Link
-          href="/services"
-          className="mb-2 md:mb-0 hover:text-blue-4 transition-all duration-300 hover:font-bold"
-        >
-          Services
-        </Link>
-
-        <Link
-          href="/about"
-          className="mb-2 md:mb-0 hover:text-blue-4 transition-all duration-300 hover:font-bold"
-        >
-          À propos
-        </Link>
-        <Link
-          href="/contact"
-          className=" hover:text-blue-4 transition-all duration-300 hover:font-bold"
-        >
-          Contact
-        </Link>
+        {links.map(({ link, href }, i) => (
+          <Link
+            key={i}
+            href={href}
+            className="hover:text-[#1B4B9B] text-[18px] text-center hover:font-bold transition-all duration-300"
+          >
+            {link}
+          </Link>
+        ))}
       </div>
 
       {/* legals */}
 
-      <div className="flex flex-col gap-2 justify-around w-full">
+      <div className="flex flex-col gap-4 items-center justify-center w-full">
+        <span>93 Rue Valette 24100 Bergerac</span>
         <div className="flex gap-4 items-center justify-center ">
           <CiMail />
           <a href="mailto:mustaphatouay@hotmail.com" className="">
             mustaphatouay@hotmail.com
           </a>
         </div>
-        <div className="flex gap-4 items-center justify-center">
-          <MdOutlineSmartphone />
-          <p className="">07 53 67 34 39</p>
-        </div>
+
+        <a
+          href="tel:0753673439"
+          className="cursor-pointer flex gap-4 items-center justify-center"
+        >
+          <MdOutlineSmartphone /> <span>07 53 67 34 39</span>
+        </a>
       </div>
       <Link
         href="/legals"

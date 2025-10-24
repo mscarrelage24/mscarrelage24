@@ -1,11 +1,31 @@
 'use client';
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 import MenuSvg from './ui/MenuSvg';
 import AnimatedGradientText from './ui/animated-gradient-text';
 import { cn } from '@/lib/utils';
-import { links } from '@/constants';
+
+const links = [
+  {
+    link: 'Accueil',
+    href: '/',
+  },
+  {
+    link: 'Services',
+    href: '/services',
+  },
+
+  {
+    link: 'À propos',
+    href: '/about',
+  },
+  {
+    link: 'Contact',
+    href: '/contact',
+  },
+];
 
 const Navbar = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
@@ -44,13 +64,12 @@ const Navbar = () => {
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center w-full">
       <nav
         ref={navRef}
-        aria-label="Navigation principale"
-        className="relative flex flex-col justify-between items-center w-full max-w-xl m-4 p-2 rounded-xl
-        bg-neutral-800/80 backdrop-blur-lg shadow-xl border border-[#E4A853]/25"
+        className="relative flex flex-col md:flex-row justify-between items-center w-full max-w-4xl m-4 py-4 px-6 lg:px-8 rounded-md bg-black/70 backdrop-blur-md"
       >
-        {/* Logo + bouton menu toujours visible */}
-        <div className="flex justify-between items-center w-full">
-          <Link href="/" className="hidden sm:block">
+        {/* Logo */}
+
+        <div className="flex justify-between items-center w-full md:w-auto">
+          <Link href="/">
             <AnimatedGradientText>
               <p
                 className={cn(
@@ -59,41 +78,44 @@ const Navbar = () => {
               >
                 MS Carrelage 24
               </p>
-            </AnimatedGradientText>
+            </AnimatedGradientText>{' '}
           </Link>
-          <a
-            href="tel:0753673439"
-            className="font-bold cursor-pointer text-neutral-100 text-lg"
-          >
-            📞 07 53 67 34 39
-          </a>
 
+          {/* Menu Button - Only visible on mobile */}
           <button
-            className="p-2 rounded-lg border-2 border-[#E4A853] cursor-pointer"
+            className="md:hidden p-2 rounded-md border-2 border-slate-200 hover:border-amber-4 transition-colors duration-300"
             onClick={toggleNavigation}
-            aria-label="Menu principal"
-            aria-expanded={openNavigation}
-            aria-controls="main-menu"
+            aria-label="Toggle menu"
           >
             <MenuSvg openNavigation={openNavigation} />
           </button>
         </div>
 
-        {/* Menu mobile (même sur desktop) */}
+        {/* Navigation Links */}
         <div
-          id="main-menu"
-          className={`${
-            openNavigation
-              ? 'flex bg-[#f5f5f5]/90 border border-[#E4A853]/25 backdrop-blur-xl mt-4'
-              : 'hidden'
-          } flex-col w-full rounded-xl gap-6 p-4 transition-all duration-300`}
+          className={`
+          md:flex md:items-center md:gap-8
+          w-full md:w-auto
+          ${openNavigation ? 'flex' : 'hidden'}
+          flex-col md:flex-row
+          absolute md:relative
+          top-full md:top-auto
+          left-0 md:left-auto
+          mt-2 md:mt-0
+          p-4 md:p-0
+          bg-black md:bg-transparent
+          rounded-md
+          border md:border-0
+          border-amber-4
+          space-y-4 md:space-y-0
+        `}
         >
-          {links.map(({ link, href }, i) => (
+          {links.map(({ link, href }) => (
             <Link
-              key={i}
+              key={link}
               href={href}
               onClick={handleLinkClick}
-              className="text-neutral-800 text-[18px] text-center hover:font-bold transition-all duration-300"
+              className="text-white hover:text-amber-4 transition-all duration-300 hover:font-bold text-center md:text-left"
             >
               {link}
             </Link>

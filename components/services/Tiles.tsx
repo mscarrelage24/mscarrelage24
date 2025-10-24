@@ -1,13 +1,9 @@
 'use client';
-
-import React, { useEffect, useRef } from 'react';
+import { motion } from 'motion/react';
+import { fadeInView } from '@/constants/motionVariants';
 import { BrickWall, House, Waves, Bath } from 'lucide-react';
 import ServiceCard from '@/components/ui/ServiceCard';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Tiles = () => {
   const services = [
@@ -37,65 +33,21 @@ const Tiles = () => {
     },
   ];
 
-  const sectionRef = useRef<HTMLElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
-
-  const animations = [
-    {
-      ref: sectionRef,
-      from: { opacity: 0 },
-      to: { opacity: 1 },
-    },
-    {
-      ref: textRef,
-      from: { opacity: 0, y: 50 },
-      to: { opacity: 1, y: 0 },
-    },
-    {
-      ref: gridRef,
-      from: { opacity: 0 },
-      to: { opacity: 1 },
-      useChildren: true,
-    },
-  ];
-
-  useEffect(() => {
-    animations.forEach(({ ref, from, to, useChildren }) => {
-      if (ref.current) {
-        gsap.fromTo(useChildren ? ref.current.children : ref.current, from, {
-          ...to,
-          duration: 1,
-          scrollTrigger: {
-            trigger: ref.current,
-            start: '-=100 bottom',
-          },
-          stagger: 0.3,
-          delay: 1,
-        });
-      }
-    });
-  }, []);
-
   return (
-    <section
-      ref={sectionRef}
-      className="container section flex-col-center gap-8 md:gap-12"
-    >
-      <div ref={textRef} className="flex-col-center max-w-xl gap-6">
-        <h2 className="sub-title">Nos Carrelages</h2>
-        <p className="description">
+    <section className="container section flex-col-center gap-8 md:gap-12">
+      <div className="flex-col-center max-w-xl gap-6">
+        <motion.h2 className="sub-title" {...fadeInView}>
+          Nos Carrelages
+        </motion.h2>
+        <motion.p className="description" {...fadeInView}>
           Notre expertise au service de vos espaces.{' '}
           <Link href="/carrelage-bergerac" className="text-amber-5 font-bold">
             Découvrez nos services de carrelage individuels
           </Link>{' '}
           pour tous vos projets d'aménagement.
-        </p>
+        </motion.p>
       </div>
-      <div
-        ref={gridRef}
-        className="flex flex-col items-center justify-center lg:flex-row lg:flex-wrap gap-6"
-      >
+      <div className="flex flex-col items-center justify-center lg:flex-row lg:flex-wrap gap-6">
         {services.map((service) => (
           <ServiceCard key={service.title} {...service} />
         ))}

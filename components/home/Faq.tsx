@@ -1,0 +1,86 @@
+'use client';
+import { motion } from 'motion/react';
+import { faq } from '@/constants/index';
+import { useState } from 'react';
+import { containerVariants, itemVariants } from '@/constants/motionVariants';
+
+const Faq = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleFaq = (index: number): void => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+  return (
+    <section className="section container mx-auto">
+      <motion.h2
+        className="sub-title mb-12"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+      >
+        Questions Fréquentes <br className="hidden sm:block" /> sur votre
+        carreleur à Bergerac
+      </motion.h2>
+      <motion.ul
+        variants={containerVariants as any}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        {faq.map(({ question, answer }, index) => (
+          <motion.li
+            key={index}
+            className="p-4 border border-neutral-300 mb-4 rounded-lg mx-auto xl:w-4/5"
+            variants={itemVariants as any}
+          >
+            <button
+              className="flex justify-between w-full"
+              onClick={() => toggleFaq(index)}
+            >
+              <span className="text-left text-md text-neutral-900">
+                {question}
+              </span>
+              <svg
+                className="fill-[#1B4B9B] shrink-0 ml-8 cursor-pointer"
+                width="16"
+                height="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  y="7"
+                  width="16"
+                  height="2"
+                  rx="1"
+                  className={`transform origin-center transition duration-200 ease-out ${
+                    openIndex === index ? 'rotate-180' : ''
+                  }`}
+                />
+                <rect
+                  y="7"
+                  width="16"
+                  height="2"
+                  rx="1"
+                  className={`transform origin-center rotate-90 transition duration-200 ease-out ${
+                    openIndex === index ? '!rotate-180' : ''
+                  }`}
+                />
+              </svg>
+            </button>
+            <div
+              className={`grid overflow-hidden transition-all duration-300 ease-in-out text-gray-700 text-md ${
+                openIndex === index
+                  ? 'grid-rows-[1fr] opacity-100 mt-4 mb-2'
+                  : 'grid-rows-[0fr] opacity-0'
+              }`}
+            >
+              <p className="overflow-hidden">{answer}</p>
+            </div>
+          </motion.li>
+        ))}
+      </motion.ul>
+    </section>
+  );
+};
+
+export default Faq;

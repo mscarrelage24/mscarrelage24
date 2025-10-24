@@ -1,12 +1,17 @@
+'use client';
+import { motion } from 'motion/react';
+import { fadeInView } from '@/constants/motionVariants';
 import React from 'react';
 
 const Areas = () => {
   return (
     <section className="container section flex-col-center gap-8 md:gap-12">
       <div className="flex-col-center max-w-xl gap-8">
-        <h2 className="flex-col-center sub-title">Zones d'intervention</h2>
+        <motion.h2 className="flex-col-center sub-title" {...fadeInView}>
+          Zones d'intervention
+        </motion.h2>
         <div className="flex flex-col space-y-4">
-          <p className="description">
+          <motion.p className="description" {...fadeInView}>
             Notre équipe de carreleurs professionnels intervient dans tout
             Bergerac 🗺️ (centre-ville, La Madeleine, Les Récollets) et dans un
             rayon de 30km aux alentours. Nous couvrons notamment les communes de
@@ -15,7 +20,7 @@ const Areas = () => {
             vous soyez en plein cœur de Bergerac ou dans un village proche,
             bénéficiez du même savoir-faire artisanal et de la même qualité de
             pose de carrelage.
-          </p>
+          </motion.p>
         </div>
       </div>
     </section>

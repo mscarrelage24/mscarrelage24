@@ -1,7 +1,7 @@
-import Expertise from '@/components/about/Expertise';
-import HeroAbout from '@/components/about/HeroAbout';
-import Philosophy from '@/components/about/Philosophy';
-import SpanishAbout from '@/components/about/SpanishAbout';
+import Expertise from '@/components/a-propos/Expertise';
+import HeroAbout from '@/components/a-propos/HeroAbout';
+import Philosophy from '@/components/a-propos/Philosophy';
+import SpanishAbout from '@/components/a-propos/SpanishAbout';
 import React from 'react';
 
 import { Metadata } from 'next';

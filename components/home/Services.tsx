@@ -1,14 +1,10 @@
 'use client';
-
+import { motion } from 'motion/react';
+import { fadeInView } from '@/constants/motionVariants';
 import { House, Sun, Waves, Hammer } from 'lucide-react';
 import ServiceCard from '@/components/ui/ServiceCard';
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Opacity } from '@tsparticles/engine';
-import Link from 'next/link';
 
-gsap.registerPlugin(ScrollTrigger);
+import Link from 'next/link';
 
 const services = [
   {
@@ -39,84 +35,21 @@ const services = [
 ];
 
 export function Services() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (sectionRef.current && containerRef.current && cardsRef.current) {
-      // Animation de la section
-      gsap.fromTo(
-        sectionRef.current,
-        { opacity: 0 },
-        {
-          opacity: 1,
-          duration: 0.6,
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top bottom-=100',
-          },
-        }
-      );
-
-      // Animation des enfants du container (titre et description)
-      const containerChildren = gsap.utils.toArray<HTMLElement>(
-        containerRef.current.children
-      );
-      containerChildren.forEach((child) => {
-        gsap.fromTo(
-          child,
-          { opacity: 0, y: 50 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            scrollTrigger: {
-              trigger: child,
-              start: 'top bottom-=100',
-            },
-          }
-        );
-      });
-
-      // Animation des cartes de service
-      const cards = gsap.utils.toArray<HTMLElement>(cardsRef.current.children);
-      cards.forEach((card) => {
-        gsap.fromTo(
-          card,
-          { opacity: 0, y: 50 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            scrollTrigger: {
-              trigger: card,
-              start: 'top bottom-=100',
-            },
-          }
-        );
-      });
-    }
-  }, []);
   return (
-    <section
-      ref={sectionRef}
-      className="container section flex-col-center gap-8 md:gap-12"
-    >
-      <div ref={containerRef} className="flex-col-center max-w-xl gap-6">
-        <h2 className="sub-title">Notre expertise carrelage</h2>
-        <p className="description">
+    <section className="container section flex-col-center gap-8 md:gap-12">
+      <div className="flex-col-center max-w-xl gap-6">
+        <motion.h2 className="sub-title" {...fadeInView}>
+          Notre expertise carrelage
+        </motion.h2>
+        <motion.p className="description" {...fadeInView}>
           Notre expertise au service de vos espaces.{' '}
-          <Link href="/services" className="text-amber-5 font-bold">
+          <Link href="/services" className="font-bold">
             Découvrez nos solutions de carrelage personnalisées
           </Link>{' '}
-          pour tous vos projets d'aménagement.
-        </p>
+          pour tous vos projets d'aménagement à Bergerac.
+        </motion.p>
       </div>
-      <div
-        ref={cardsRef}
-        className="flex flex-col items-center justify-center lg:flex-row lg:flex-wrap gap-6"
-      >
+      <div className="flex flex-col items-center justify-center lg:flex-row lg:flex-wrap gap-6">
         {services.map((service) => (
           <ServiceCard key={service.title} {...service} />
         ))}

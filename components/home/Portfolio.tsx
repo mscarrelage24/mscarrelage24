@@ -1,82 +1,24 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
-import { Compare } from '@/components/ui/compare';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { motion } from 'motion/react';
+import { fadeInView } from '@/constants/motionVariants';
 
-gsap.registerPlugin(ScrollTrigger);
+import { Compare } from '@/components/ui/compare';
 
 const Portfolio = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const divRefOne = useRef<HTMLDivElement>(null);
-  const divRefTwo = useRef<HTMLDivElement>(null);
-
-  const animations = [
-    {
-      ref: sectionRef,
-      from: { opacity: 0 },
-      to: { opacity: 1 },
-    },
-    {
-      ref: divRefOne,
-      from: { opacity: 0 },
-      to: { opacity: 1 },
-    },
-    {
-      ref: divRefTwo,
-      from: { opacity: 0 },
-      to: { opacity: 1 },
-    },
-  ];
-
-  useEffect(() => {
-    // Configuration mobile
-    gsap.matchMedia().add('(max-width: 767px)', () => {
-      animations.forEach(({ ref, from, to }) => {
-        if (ref.current) {
-          gsap.fromTo(ref.current, from, {
-            ...to,
-            duration: 1,
-            scrollTrigger: {
-              trigger: ref.current,
-              start: '-=400 bottom',
-            },
-          });
-        }
-      });
-    });
-
-    // Configuration desktop
-    gsap.matchMedia().add('(min-width: 768px)', () => {
-      animations.forEach(({ ref, from, to }) => {
-        if (ref.current) {
-          gsap.fromTo(ref.current, from, {
-            ...to,
-            duration: 1,
-            scrollTrigger: {
-              trigger: ref.current,
-              start: '-=300 bottom',
-            },
-          });
-        }
-      });
-    });
-  }, []);
   return (
-    <section
-      ref={sectionRef}
-      className="container section flex-col-center gap-16"
-    >
-      <div ref={divRefOne} className="flex-col-center max-w-xl gap-6">
-        <h2 className="sub-title">Nos Dernières Réalisations</h2>
-        <p className="description">
-          Admirez nos dernières transformations en carrelage. Des projets tout
-          juste livrés qui témoignent de notre passion pour le travail bien
-          fait. Une collection de réalisations qui s'enrichit au fil de vos
-          projets.
-        </p>
+    <section className="container section flex-col-center gap-16">
+      <div className="flex-col-center max-w-xl gap-6">
+        <motion.h2 className="sub-title" {...fadeInView}>
+          Nos Dernières Réalisations
+        </motion.h2>
+        <motion.p className="description" {...fadeInView}>
+          Admirez nos dernières transformations en carrelage à Bergerac. Des
+          projets tout juste livrés qui témoignent de notre passion pour le
+          travail bien fait. Une collection de réalisations qui s'enrichit au
+          fil de vos projets.
+        </motion.p>
       </div>
-      <div ref={divRefTwo} className="flex-col-center gap-6 lg:flex-row">
+      <motion.div className="flex-col-center gap-6 lg:flex-row" {...fadeInView}>
         <Compare
           firstImage="/portfolio/pb-1.jpg"
           secondImage="/portfolio/pa-1.jpg"
@@ -97,7 +39,7 @@ const Portfolio = () => {
           firstImageAlt="Chantier avant la pose de carrelage à Bergerac"
           secondImageAlt="Chantier après la pose de carrelage à Bergerac"
         />
-      </div>
+      </motion.div>
     </section>
   );
 };

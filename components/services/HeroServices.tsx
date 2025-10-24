@@ -1,56 +1,15 @@
 'use client';
-
-import React, { useEffect, useRef } from 'react';
+import { motion } from 'motion/react';
+import { fadeInView } from '@/constants/motionVariants';
 import GridPattern from '@/components/ui/grid-pattern';
 import { cn } from '@/lib/utils';
-import gsap from 'gsap';
 
 const HeroServices = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (containerRef.current) {
-      gsap.fromTo(
-        containerRef.current,
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          duration: 1,
-          ease: 'sine.inOut',
-        }
-      );
-    }
-
-    if (textRef.current) {
-      gsap.fromTo(
-        textRef.current.children,
-        {
-          opacity: 0,
-          y: 50,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          stagger: 0.2,
-          delay: 0.5,
-          ease: 'sine.inOut',
-        }
-      );
-    }
-  }, []);
-
   return (
-    <div
-      ref={containerRef}
-      className="min-h-[70vh] md:min-h-[65vh] lg:min-h-[75vh] relative flex size-full items-center justify-center overflow-hidden rounded-lg p-8 md:p-20 mt-16 md:mt-0"
-    >
-      <div
-        ref={textRef}
+    <section className="min-h-[70vh] md:min-h-[65vh] lg:min-h-[75vh] relative flex size-full items-center justify-center overflow-hidden rounded-lg p-8 md:p-20 mt-16 md:mt-0">
+      <motion.div
         className="flex flex-col items-center justify-center gap-6 h-[300px] md:h-h-[350px] lg:h-[400px]"
+        {...fadeInView}
       >
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-700 to-neutral-900 md:mt-12">
           Nos Solutions Carrelage
@@ -71,8 +30,8 @@ const HeroServices = () => {
             '[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]'
           )}
         />
-      </div>
-    </div>
+      </motion.div>
+    </section>
   );
 };
 
