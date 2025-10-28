@@ -3,7 +3,6 @@ import React, { useState, useRef } from 'react';
 import { Label } from '@/components/ui/Label';
 import { Input } from '@/components/ui/Input';
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import useMediaQuery, { BREAKPOINTS } from '@/hooks/useMediaQuery';
 
@@ -120,7 +119,7 @@ export function Form() {
       ref={ref}
       className="min-h-screen flex flex-col justify-center items-center bg-[url('/hero-contact.jpg')] bg-center bg-cover bg-blend-darken bg-black/60"
     >
-      <motion.div
+      <div
         {...animationProps}
         className="max-w-md w-full mx-auto rounded-lg p-4 md:p-8 shadow-input bg-slate-100 border border-zinc-300"
       >
@@ -195,7 +194,7 @@ export function Form() {
             </button>
           </form>
         )}
-      </motion.div>
+      </div>
     </section>
   );
 }
