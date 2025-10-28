@@ -1,7 +1,7 @@
 'use client';
 
 import React, { ReactElement, useEffect, useMemo, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'motion/react';
 
 export interface AnimatedListProps {
   className?: string;
@@ -48,7 +48,7 @@ export function AnimatedListItem({ children }: { children: React.ReactNode }) {
     initial: { scale: 0, opacity: 0 },
     animate: { scale: 1, opacity: 1, originY: 0 },
     exit: { scale: 0, opacity: 0 },
-    transition: { type: 'spring', stiffness: 350, damping: 40 },
+    transition: { type: 'spring', stiffness: 350, damping: 40 } as const,
   };
 
   return (

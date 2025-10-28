@@ -1,10 +1,7 @@
-'use client';
-import { motion } from 'motion/react';
-import { fadeInView } from '@/constants/motionVariants';
 import { House, Sun, Waves, Hammer } from 'lucide-react';
-import ServiceCard from '@/components/ui/ServiceCard';
-
 import Link from 'next/link';
+import ServiceCard from '@/components/ui/ServiceCard';
+import MotionText from '../animation/MotionText';
 
 const services = [
   {
@@ -38,20 +35,26 @@ export function Services() {
   return (
     <section className="container section flex-col-center gap-8 md:gap-12">
       <div className="flex-col-center max-w-xl gap-6">
-        <motion.h2 className="sub-title" {...fadeInView}>
-          Notre expertise carrelage
-        </motion.h2>
-        <motion.p className="description" {...fadeInView}>
-          Notre expertise au service de vos espaces.{' '}
-          <Link href="/services" className="font-bold">
-            Découvrez nos solutions de carrelage personnalisées
-          </Link>{' '}
-          pour tous vos projets d'aménagement à Bergerac.
-        </motion.p>
+        <h2 className="sub-title">
+          <MotionText delay={0.1} y={15}>
+            Notre expertise carrelage
+          </MotionText>
+        </h2>
+
+        <p className="description">
+          <MotionText delay={0.2} y={20}>
+            Notre expertise au service de vos espaces.
+            <Link href="/services" className="font-bold">
+              Découvrez nos solutions de carrelage personnalisées
+            </Link>{' '}
+            pour tous vos projets d'aménagement à Bergerac.
+          </MotionText>
+        </p>
       </div>
+
       <div className="flex flex-col items-center justify-center lg:flex-row lg:flex-wrap gap-6">
-        {services.map((service) => (
-          <ServiceCard key={service.title} {...service} />
+        {services.map((service, i) => (
+          <ServiceCard {...service} key={i} />
         ))}
       </div>
     </section>

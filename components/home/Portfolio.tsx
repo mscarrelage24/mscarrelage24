@@ -1,24 +1,23 @@
-'use client';
-import { motion } from 'motion/react';
-import { fadeInView } from '@/constants/motionVariants';
-
 import { Compare } from '@/components/ui/compare';
+import MotionText from '../animation/MotionText';
 
 const Portfolio = () => {
   return (
     <section className="container section flex-col-center gap-16">
       <div className="flex-col-center max-w-xl gap-6">
-        <motion.h2 className="sub-title" {...fadeInView}>
-          Nos Dernières Réalisations
-        </motion.h2>
-        <motion.p className="description" {...fadeInView}>
-          Admirez nos dernières transformations en carrelage à Bergerac. Des
-          projets tout juste livrés qui témoignent de notre passion pour le
-          travail bien fait. Une collection de réalisations qui s'enrichit au
-          fil de vos projets.
-        </motion.p>
+        <h2 className="sub-title">
+          <MotionText>Nos Dernières Réalisations</MotionText>
+        </h2>
+        <p className="description">
+          <MotionText>
+            Admirez nos dernières transformations en carrelage à Bergerac. Des
+            projets tout juste livrés qui témoignent de notre passion pour le
+            travail bien fait. Une collection de réalisations qui s'enrichit au
+            fil de vos projets.
+          </MotionText>
+        </p>
       </div>
-      <motion.div className="flex-col-center gap-6 lg:flex-row" {...fadeInView}>
+      <div className="flex-col-center gap-6 lg:flex-row">
         <Compare
           firstImage="/portfolio/pb-1.jpg"
           secondImage="/portfolio/pa-1.jpg"
@@ -39,7 +38,7 @@ const Portfolio = () => {
           firstImageAlt="Chantier avant la pose de carrelage à Bergerac"
           secondImageAlt="Chantier après la pose de carrelage à Bergerac"
         />
-      </motion.div>
+      </div>
     </section>
   );
 };

@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
-import { disablePageScroll, enablePageScroll } from 'scroll-lock';
+import { disablePageScroll, enablePageScroll } from '@fluejs/noscroll';
 import MenuSvg from './ui/MenuSvg';
 import AnimatedGradientText from './ui/animated-gradient-text';
 import { cn } from '@/lib/utils';
