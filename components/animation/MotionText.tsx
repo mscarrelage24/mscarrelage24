@@ -12,7 +12,7 @@ interface MotionTextProps {
 
 export default function MotionText({
   children,
-  delay = 0.2,
+  delay = 0,
   y = 0,
   once = true,
   duration = 0.8,

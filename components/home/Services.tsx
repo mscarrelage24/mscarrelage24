@@ -36,13 +36,11 @@ export function Services() {
     <section className="container section flex-col-center gap-8 md:gap-12">
       <div className="flex-col-center max-w-xl gap-6">
         <h2 className="sub-title">
-          <MotionText delay={0.1} y={15}>
-            Notre expertise carrelage
-          </MotionText>
+          <MotionText>Notre expertise carrelage</MotionText>
         </h2>
 
         <p className="description">
-          <MotionText delay={0.2} y={20}>
+          <MotionText>
             Notre expertise au service de vos espaces.
             <Link href="/services" className="font-bold">
               Découvrez nos solutions de carrelage personnalisées
