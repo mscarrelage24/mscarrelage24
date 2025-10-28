@@ -59,7 +59,9 @@ const Footer = () => {
       >
         Mentions légales
       </Link>
-      <p className="">© {currentYear} MS Carrelage 24. Tous droits réservés.</p>
+      <p className="text-center">
+        © {currentYear} MS Carrelage 24. Tous droits réservés.
+      </p>
       <p>
         Crée par{' '}
         <a

@@ -1,63 +1,9 @@
-'use client';
 import Link from 'next/link';
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+
 const HeroAbout = () => {
-  const mainDivRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (mainDivRef.current) {
-      gsap.fromTo(
-        mainDivRef.current,
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          duration: 1.5,
-          ease: 'power2.out',
-        }
-      );
-    }
-    if (containerRef.current) {
-      gsap.fromTo(
-        containerRef.current.children,
-        {
-          opacity: 0,
-          transform: 'translateY(50px)',
-        },
-        {
-          opacity: 1,
-          transform: 'translateY(0px)',
-
-          duration: 1,
-          stagger: 0.2,
-          ease: 'sine.out',
-          delay: 0.5, // Ajoute un délai pour que ça commence après l'animation de la div principale
-        }
-      );
-    }
-  }, []);
-
-  useEffect(() => {
-    const preloadImages = () => {
-      const heroMobile = new Image();
-      const heroDesktop = new Image();
-      heroMobile.src = '/hero-a-mob.jpg';
-      heroDesktop.src = '/hero-a.jpg';
-    };
-    preloadImages();
-  }, []);
   return (
-    <div
-      ref={mainDivRef}
-      className="min-h-screen flex-col-center lg:flex-row lg:justify-around bg-cover bg-center bg-[url('/hero-a-mob.jpg')] md:bg-[url('/hero-a.jpg')] sm:px-8 lg:px-0"
-    >
-      <div
-        ref={containerRef}
-        className="bg-black/80 md:bg-black/90 p-6 lg:p-8 rounded-lg flex-col-center w-full max-w-3xl space-y-6"
-      >
+    <div className="min-h-screen flex-col-center lg:flex-row lg:justify-around bg-cover bg-center bg-[url('/hero-a-mob.jpg')] md:bg-[url('/hero-a.jpg')] sm:px-8 lg:px-0">
+      <div className="bg-black/80 md:bg-black/90 p-6 lg:p-8 rounded-lg flex-col-center w-full max-w-3xl space-y-6">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300 bg-opacity-50">
           MS Carrelage 24 - <br /> Artisan de vos Espaces
         </h1>

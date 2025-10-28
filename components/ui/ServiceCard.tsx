@@ -38,10 +38,10 @@ const ServiceCard = ({
           }}
           className="py-4 relative z-20"
         >
-          <h2 className="text-xl text-left font-bold flex gap-4">
+          <h3 className="text-xl text-left font-bold flex gap-4">
             <span>{icon}</span>
             <span>{title}</span>
-          </h2>
+          </h3>
           <p className="text-left mt-4 text-sm text-neutral-700 lg:text-base">
             {text}
           </p>

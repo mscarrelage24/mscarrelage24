@@ -39,6 +39,7 @@ export function Services() {
         <p className="description">
           Notre expertise au service de vos espaces.
           <Link href="/services" className="font-bold">
+            {' '}
             Découvrez nos solutions de carrelage personnalisées
           </Link>{' '}
           pour tous vos projets d'aménagement à Bergerac.

@@ -60,3 +60,56 @@ export const faq = [
       'Les tarifs varient selon le type de carrelage, la surface à couvrir et la complexité du chantier. Chez MS Carrelage 24, chaque projet fait l’objet d’un devis clair et détaillé, afin de garantir un prix juste et adapté à vos besoins.',
   },
 ];
+
+export const cardsGallery = [
+  {
+    title: 'MS Carrelage 24',
+    src: '/g2.jpg',
+  },
+  {
+    title: 'MS Carrelage 24',
+    src: '/g7.jpg',
+  },
+  {
+    title: 'MS Carrelage 24',
+    src: '/g3.jpg',
+  },
+  {
+    title: 'MS Carrelage 24',
+    src: '/g4.jpg',
+  },
+  {
+    title: 'MS Carrelage 24',
+    src: '/g5.jpg',
+  },
+  {
+    title: 'MS Carrelage 24',
+    src: '/g6.jpg',
+  },
+];
+export const cardsAbout = [
+  {
+    title: 'MS Carrelage 24',
+    src: '/about-gallery/s1.jpg',
+  },
+  {
+    title: 'MS Carrelage 24',
+    src: '/about-gallery/s2.jpg',
+  },
+  {
+    title: 'MS Carrelage 24',
+    src: '/about-gallery/s3.jpg',
+  },
+  {
+    title: 'MS Carrelage 24',
+    src: '/about-gallery/s4.jpg',
+  },
+  {
+    title: 'MS Carrelage 24',
+    src: '/about-gallery/s5.jpg',
+  },
+  {
+    title: 'MS Carrelage 24',
+    src: '/about-gallery/s6.jpg',
+  },
+];
