@@ -1,14 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import MotionText from '../animation/MotionText';
-import MotionButton from '../animation/MotionButton';
 
 const Skills = () => {
   return (
     <section className="container section">
-      <h2 className="sub-title">
-        <MotionText>Artisan carreleur à Bergerac depuis 2008</MotionText>
-      </h2>
+      <h2 className="sub-title">Artisan carreleur à Bergerac depuis 2008</h2>
 
       {/* Section 1 */}
 
@@ -27,20 +23,19 @@ const Skills = () => {
         {/* text */}
         <div className="flex flex-col items-center">
           <h3 className="sub-title-section mt-8 md:mt-12">
-            <MotionText>Un savoir-faire artisanal</MotionText>
+            Un savoir-faire artisanal
           </h3>
           <p className="py-8 px-4 description">
-            <MotionText>
-              Depuis plus de 15 ans, MS Carrelage 24 met son expertise au
-              service de vos projets en Dordogne. Notre équipe de carreleurs
-              qualifiés s'engage à transformer vos espaces avec précision et
-              créativité. Du conseil à la réalisation, nous vous accompagnons
-              dans chaque étape pour garantir un résultat à la hauteur de vos
-              attentes.
-            </MotionText>
+            Depuis plus de 15 ans, MS Carrelage 24 met son expertise au service
+            de vos projets en Dordogne. Notre équipe de carreleurs qualifiés
+            s'engage à transformer vos espaces avec précision et créativité. Du
+            conseil à la réalisation, nous vous accompagnons dans chaque étape
+            pour garantir un résultat à la hauteur de vos attentes.
           </p>
           <Link href="/services">
-            <MotionButton primary>Mes services</MotionButton>
+            <button className="inline-flex items-center gap-2 px-6 h-12 rounded-xl cursor-pointer border border-white/15 text-white">
+              Mes services
+            </button>
           </Link>
         </div>
       </div>
@@ -63,19 +58,19 @@ const Skills = () => {
 
         <div className="flex flex-col items-center order-2 lg:order-1">
           <h3 className="sub-title-section mt-8 md:mt-12">
-            <MotionText>Notre engagement qualité</MotionText>
+            Notre engagement qualité
           </h3>
           <p className="py-8 px-4 description">
-            <MotionText>
-              Plus qu'un métier, le carrelage est notre passion. Nous combinons
-              techniques traditionnelles et innovations modernes pour sublimer
-              vos sols et murs. Chaque projet est unique et bénéficie de notre
-              expertise reconnue en Dordogne, avec une garantie décennale pour
-              votre tranquillité.{' '}
-            </MotionText>
+            Plus qu'un métier, le carrelage est notre passion. Nous combinons
+            techniques traditionnelles et innovations modernes pour sublimer vos
+            sols et murs. Chaque projet est unique et bénéficie de notre
+            expertise reconnue en Dordogne, avec une garantie décennale pour
+            votre tranquillité.
           </p>
-          <Link href="/contact" className="">
-            <MotionButton primary>👋 Prenez contact</MotionButton>
+          <Link href="/contact">
+            <button className="inline-flex items-center gap-2 px-6 h-12 rounded-xl cursor-pointer border border-white/15 bg-zinc-800/95 text-neutral-50">
+              👋 Prenez Contact
+            </button>
           </Link>
         </div>
       </div>

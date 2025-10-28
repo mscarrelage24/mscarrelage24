@@ -1,20 +1,15 @@
 import { Compare } from '@/components/ui/compare';
-import MotionText from '../animation/MotionText';
 
 const Portfolio = () => {
   return (
     <section className="container section flex-col-center gap-16">
       <div className="flex-col-center max-w-xl gap-6">
-        <h2 className="sub-title">
-          <MotionText>Nos Dernières Réalisations</MotionText>
-        </h2>
+        <h2 className="sub-title">Nos Dernières Réalisations</h2>
         <p className="description">
-          <MotionText>
-            Admirez nos dernières transformations en carrelage à Bergerac. Des
-            projets tout juste livrés qui témoignent de notre passion pour le
-            travail bien fait. Une collection de réalisations qui s'enrichit au
-            fil de vos projets.
-          </MotionText>
+          Admirez nos dernières transformations en carrelage à Bergerac. Des
+          projets tout juste livrés qui témoignent de notre passion pour le
+          travail bien fait. Une collection de réalisations qui s'enrichit au
+          fil de vos projets.
         </p>
       </div>
       <div className="flex-col-center gap-6 lg:flex-row">

@@ -1,7 +1,6 @@
 import { House, Sun, Waves, Hammer } from 'lucide-react';
 import Link from 'next/link';
 import ServiceCard from '@/components/ui/ServiceCard';
-import MotionText from '../animation/MotionText';
 
 const services = [
   {
@@ -35,18 +34,14 @@ export function Services() {
   return (
     <section className="container section flex-col-center gap-8 md:gap-12">
       <div className="flex-col-center max-w-xl gap-6">
-        <h2 className="sub-title">
-          <MotionText>Notre expertise carrelage</MotionText>
-        </h2>
+        <h2 className="sub-title">Notre expertise carrelage</h2>
 
         <p className="description">
-          <MotionText>
-            Notre expertise au service de vos espaces.
-            <Link href="/services" className="font-bold">
-              Découvrez nos solutions de carrelage personnalisées
-            </Link>{' '}
-            pour tous vos projets d'aménagement à Bergerac.
-          </MotionText>
+          Notre expertise au service de vos espaces.
+          <Link href="/services" className="font-bold">
+            Découvrez nos solutions de carrelage personnalisées
+          </Link>{' '}
+          pour tous vos projets d'aménagement à Bergerac.
         </p>
       </div>
 
