@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { Lens } from '@/components/ui/Lens';
 
 const Expertise = () => {
   return (
@@ -12,15 +11,14 @@ const Expertise = () => {
         quatre étapes qui garantit des réalisations d'exception, portées par
         notre passion du détail et notre engagement qualité.
       </p>
-      <Lens>
-        <Image
-          src="/portfolio/r1.jpg"
-          alt="ms carrelage 24"
-          width={650}
-          height={400}
-          className="rounded-lg object-contain object-center"
-        />
-      </Lens>
+
+      <Image
+        src="/portfolio/r1.jpg"
+        alt="ms carrelage 24"
+        width={650}
+        height={400}
+        className="rounded-lg object-contain object-center"
+      />
     </section>
   );
 };

@@ -1,5 +1,3 @@
-'use client';
-import { motion } from 'motion/react';
 import { fadeInView } from '@/constants/motionVariants';
 import { BrickWall, House, Waves, Bath } from 'lucide-react';
 import ServiceCard from '@/components/ui/ServiceCard';
@@ -36,16 +34,14 @@ const Tiles = () => {
   return (
     <section className="container section flex-col-center gap-8 md:gap-12">
       <div className="flex-col-center max-w-xl gap-6">
-        <motion.h2 className="sub-title" {...fadeInView}>
-          Nos Carrelages
-        </motion.h2>
-        <motion.p className="description" {...fadeInView}>
+        <h2 className="sub-title">Nos Carrelages</h2>
+        <p className="description">
           Notre expertise au service de vos espaces.{' '}
           <Link href="/carrelage-bergerac" className="text-amber-5 font-bold">
             Découvrez nos services de carrelage individuels
           </Link>{' '}
           pour tous vos projets d'aménagement.
-        </motion.p>
+        </p>
       </div>
       <div className="flex flex-col items-center justify-center lg:flex-row lg:flex-wrap gap-6">
         {services.map((service) => (
